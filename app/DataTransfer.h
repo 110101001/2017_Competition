@@ -12,8 +12,8 @@ void ANO_DT_Send_PID(u8 group,float p1_p,float p1_i,float p1_d,float p2_p,float 
 void ANO_DT_Send_Check(u8 head, u8 check_sum);
 extern vs16 ControlMode;
 void ANO_DT_Send_MotoPWM(u16 m_1,u16 m_2,u16 m_3,u16 m_4,u16 m_5,u16 m_6,u16 m_7,u16 m_8);
-enum PendulumMode
-{ Stop=0,Task1,Task2,Task3,Task4,Task5,Task6,Test } ;
+enum PendulumMode 
+{ Stop=0,Task1,Task2,Task3,Task4,Task5,Task6};
 extern enum PendulumMode NS;
 extern float AngleWithGradiantFromUsart,ExpAngleFromUsart;
 #endif

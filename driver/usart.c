@@ -248,9 +248,6 @@ void Usart2_Send(unsigned char *DataToSend ,u8 data_num)
 	while (DMA_GetCmdStatus(DMA1_Stream6) != DISABLE){}	//确保DMA可以被设置  
 	DMA1_Stream6->NDTR = (uint16_t)(num+data_num);          //数据传输量  
 	DMA_Cmd(DMA1_Stream6, ENABLE);       
-
-
-
 }
 
 void Usart2_Send_DMA(unsigned char *DataToSend ,u8 data_num)

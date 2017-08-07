@@ -9,6 +9,9 @@ u8 send_pid1=0,send_pid2=0,send_pid3=0,send_check=0;
 u8 checkdata_to_send,checksum_to_send;
 u8 appTosave=0;
 
+extern PID_Type* Motor_X;
+extern PID_Type* Motor_Y;
+
 
 //各种用于数据传输的函数
 //发送pitch，roll，yaw三个角度到上位机
@@ -240,26 +243,27 @@ void Data_Receive_Anl(u8 *data_buf,u8 num)
 			if(*(data_buf+2)==0X21){
 			NS=Stop;
 		}
-//if(*(data_buf+2)==0X02)
-//	{
-//		if(*(data_buf+4)==0X01)
-//		{
-//			send_pid1 = 1;
-//			send_pid2 = 1;
-//		}
-//		if(*(data_buf+4)==0XA1)	
-//		{
-//			Para_ResetToFactorySetup();
-//		}
-//	}
-//		if(*(data_buf+2)==0X10)								//PID1
-//    {
-//        PitchP_arg.kp  = 0.01*( (vs16)(*(data_buf+4)<<8)|*(data_buf+5) );
-//        PitchP_arg.ki  = 0.01*( (vs16)(*(data_buf+6)<<8)|*(data_buf+7) );
-//        PitchP_arg.kd  = 0.01*( (vs16)(*(data_buf+8)<<8)|*(data_buf+9) );
-//        PitchS_arg.kp = 0.01*( (vs16)(*(data_buf+10)<<8)|*(data_buf+11) );
-//        PitchS_arg.ki = 0.01*( (vs16)(*(data_buf+12)<<8)|*(data_buf+13) );
-//        PitchS_arg.kd = 0.01*( (vs16)(*(data_buf+14)<<8)|*(data_buf+15) );
+if(*(data_buf+2)==0X02)
+	{
+		if(*(data_buf+4)==0X01)
+		{
+			send_pid1 = 1;
+			send_pid2 = 1;
+		}
+		if(*(data_buf+4)==0XA1)	
+		{
+			//Para_ResetToFactorySetup();
+		}
+	}
+if(*(data_buf+2)==0X10)								//PID1
+    {
+			  Motor_X->kp = -0.1*( (vs16)(*(data_buf+4)<<8)|*(data_buf+5) );
+        Motor_X->ki = -0.001*( (vs16)(*(data_buf+6)<<8)|*(data_buf+7) );
+        Motor_X->kd = -0.1*( (vs16)(*(data_buf+8)<<8)|*(data_buf+9) );
+        Motor_Y->kp = -0.1*( (vs16)(*(data_buf+10)<<8)|*(data_buf+11) );
+        Motor_Y->ki = -0.001*( (vs16)(*(data_buf+12)<<8)|*(data_buf+13) );
+        Motor_Y->kd = -0.1*( (vs16)(*(data_buf+14)<<8)|*(data_buf+15) );
+		}
 //        RollP_arg.kp 	= 0.01*( (vs16)(*(data_buf+16)<<8)|*(data_buf+17) );
 //        RollP_arg.ki 	= 0.01*( (vs16)(*(data_buf+18)<<8)|*(data_buf+19) );
 //        RollP_arg.kd 	= 0.01*( (vs16)(*(data_buf+20)<<8)|*(data_buf+21) );
@@ -270,8 +274,8 @@ void Data_Receive_Anl(u8 *data_buf,u8 num)
 //					checksum_to_send = sum;
 //				}
 //    }
-//		 if(*(data_buf+2)==0X11)								//PID2
-//    {
+if(*(data_buf+2)==0X11)								//PID2
+{
 //        RollS_arg.kp  = 0.01*( (vs16)(*(data_buf+4)<<8)|*(data_buf+5) );
 //        RollS_arg.ki  = 0.01*( (vs16)(*(data_buf+6)<<8)|*(data_buf+7) );
 //        RollS_arg.kd  = 0.01*( (vs16)(*(data_buf+8)<<8)|*(data_buf+9) );
@@ -284,8 +288,8 @@ void Data_Receive_Anl(u8 *data_buf,u8 num)
 //					checkdata_to_send = *(data_buf+2);
 //					checksum_to_send = sum;
 //				}
-//    }
-//	
+   }
+
     	if(*(data_buf+2)==0X03)
 	{
 

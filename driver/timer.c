@@ -1,6 +1,6 @@
 #include "main.h"
 /*----TIM2---TIM6-----*/
-void TIM5_Configuration(void)										//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
+void TIM5_Configuration(void)//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
 {
    TIM_TimeBaseInitTypeDef tim;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
@@ -33,8 +33,6 @@ void Delay_ms(uint32_t ms)
     while (ms--)
         Delay_us(1000);
 }
-
-
 
 
 void TIM6_Configuration(void)							
@@ -88,3 +86,61 @@ uint32_t GetInnerLoop(int loop)								//用于获得精确的函数调用的周期
 	Time[1][loop] = Get_Time_Micros();
 	return Time[1][loop]-Time[0][loop];
 }
+
+void TIM3_Configuration(void)//1000-1,84-1,1ms进入一次中断
+{
+	  NVIC_InitTypeDef NVIC_InitStructure;
+    TIM_TimeBaseInitTypeDef tim;
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
+    tim.TIM_Period = 999;
+    tim.TIM_Prescaler = 83;	 //1M 的时钟  
+	  tim.TIM_ClockDivision=TIM_CKD_DIV1; 	
+	  TIM_TimeBaseInit(TIM5,&tim);
+	  TIM_ITConfig(TIM5,TIM_IT_Update,ENABLE); //允许更新中断
+	  TIM_Cmd(TIM3,ENABLE); 
+	
+		NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;  //TIM5中断
+		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;  //先占优先级0级
+		NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;  //从优先级3级
+		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; //IRQ通道被使能
+		NVIC_Init(&NVIC_InitStructure);  
+
+    TIM_Cmd(TIM3,ENABLE);	
+}
+
+void TIM3_IRQHandler(void)
+{
+ static u32 Time_Ms=0;
+	static u32 Time_Last=0;
+	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) 
+	{
+		Time_Ms++;
+		if (Time_Ms%2==0){
+		MPU6050_Read();
+	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
+  	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
+						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);
+			Time_Last=TIM5->CNT;
+					if (Time_Ms%10==0)
+				{
+					ANO_AK8975_Read();	
+//					Motor_X->now=Roll,Motor_Y->now=Pitch;
+//						switch(NS)
+//						{	
+//							case Stop: Set_Motor(0,0); break;
+//							case Task1: mode1(); break;
+//							case Task2: mode2(); break;
+//							case Task3: mode3(); break;
+//							case Task4: mode4(); break;
+//							case Task5: mode5(); break;
+//							//case 6: mode6(); break;
+//							default:break;
+//						}	
+				}	
+		}
+		DataTransferTask(Time_Ms);
+	TIM_ClearITPendingBit(TIM5,TIM_IT_Update);
+}
+}
+
+

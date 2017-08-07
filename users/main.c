@@ -2,7 +2,10 @@
 
 int main(){
 	All_Init();
-	while(1);
+	LCD_DisplayString(10,10,16,"SB");
+	while(1)
+	{
+	}
 }
 
 

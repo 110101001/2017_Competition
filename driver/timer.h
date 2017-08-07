@@ -14,11 +14,11 @@
 #define delay_us(x) (Delay_us(x))
 #define delay_ms(x) (Delay_ms(x))
 void TIM5_Configuration(void);
-//uint32_t Get_Time_Micros(void);
 void Delay_us(uint32_t us);
 void Delay_ms(uint32_t ms);
 void TIM6_Configuration(void);
 void TIM6_Start(void);
+void TIM3_Configuration(void);//用于控制，中断1ms/次
 uint32_t GetInnerLoop(int loop);
 void InnerLoopInit(void);
 #endif
