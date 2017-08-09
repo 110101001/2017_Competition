@@ -45,3 +45,4 @@
 .\output\pwm.o: .\driver\lcd.h
 .\output\pwm.o: .\app\TB6612FNG.h
 .\output\pwm.o: .\app\ctrl.h
+.\output\pwm.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

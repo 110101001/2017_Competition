@@ -45,3 +45,4 @@
 .\output\mpu6050.o: .\driver\lcd.h
 .\output\mpu6050.o: .\app\TB6612FNG.h
 .\output\mpu6050.o: .\app\ctrl.h
+.\output\mpu6050.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

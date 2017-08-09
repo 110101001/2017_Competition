@@ -45,5 +45,6 @@
 .\output\lcd.o: .\driver\lcd.h
 .\output\lcd.o: .\app\TB6612FNG.h
 .\output\lcd.o: .\app\ctrl.h
+.\output\lcd.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\lcd.o: driver\cfont.h
 .\output\lcd.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdlib.h

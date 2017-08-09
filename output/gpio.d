@@ -45,3 +45,4 @@
 .\output\gpio.o: .\driver\lcd.h
 .\output\gpio.o: .\app\TB6612FNG.h
 .\output\gpio.o: .\app\ctrl.h
+.\output\gpio.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

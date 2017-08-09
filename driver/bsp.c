@@ -5,6 +5,9 @@ PID_Type MY={0,0,0,0,0,0,0,0,0,0};
 
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
+extern PID_Type* Speed_X;
+extern PID_Type* Speed_Y;
+
 extern int mode_change_flag;
 
 
@@ -12,6 +15,8 @@ extern int mode_change_flag;
 {
 	Motor_X=&MX;
 	Motor_Y=&MY;
+	Speed_X=&MX;
+	Speed_Y=&MX;	
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    
 	LED_Configuration();																//LED初始化
 	TIM5_Configuration();																//定时器初始化

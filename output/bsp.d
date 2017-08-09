@@ -45,4 +45,5 @@
 .\output\bsp.o: .\driver\lcd.h
 .\output\bsp.o: .\app\TB6612FNG.h
 .\output\bsp.o: .\app\ctrl.h
+.\output\bsp.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\bsp.o: driver\ov7670.h

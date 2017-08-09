@@ -45,3 +45,4 @@
 .\output\ak8975.o: .\driver\lcd.h
 .\output\ak8975.o: .\app\TB6612FNG.h
 .\output\ak8975.o: .\app\ctrl.h
+.\output\ak8975.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

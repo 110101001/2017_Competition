@@ -45,3 +45,4 @@
 .\output\ctrl.o: .\driver\lcd.h
 .\output\ctrl.o: .\app\TB6612FNG.h
 .\output\ctrl.o: .\app\ctrl.h
+.\output\ctrl.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

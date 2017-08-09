@@ -1,5 +1,10 @@
 #include "main.h"
 
+//第一环，当前位置到目标位置的差值控制球的速度
+PID_Type* Speed_X;
+PID_Type* Speed_Y;
+
+//第二环，速度变成电机PWM占空比
 PID_Type* Motor_X;
 PID_Type* Motor_Y;
 

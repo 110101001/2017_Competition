@@ -45,3 +45,4 @@
 .\output\datatransfer.o: .\driver\lcd.h
 .\output\datatransfer.o: .\app\TB6612FNG.h
 .\output\datatransfer.o: .\app\ctrl.h
+.\output\datatransfer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

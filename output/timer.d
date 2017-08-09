@@ -45,3 +45,4 @@
 .\output\timer.o: .\driver\lcd.h
 .\output\timer.o: .\app\TB6612FNG.h
 .\output\timer.o: .\app\ctrl.h
+.\output\timer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

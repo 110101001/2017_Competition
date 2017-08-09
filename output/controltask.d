@@ -45,3 +45,4 @@
 .\output\controltask.o: .\driver\lcd.h
 .\output\controltask.o: .\app\TB6612FNG.h
 .\output\controltask.o: .\app\ctrl.h
+.\output\controltask.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

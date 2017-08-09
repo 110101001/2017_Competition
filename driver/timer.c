@@ -1,4 +1,9 @@
 #include "main.h"
+
+extern double speed_x,speed_y;
+static u32 Time_Ms=0;
+static u32 Time_Last=0;
+
 /*----TIM2---TIM6-----*/
 void TIM5_Configuration(void)//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
 {
@@ -110,8 +115,6 @@ void TIM3_Configuration(void)//1000-1,84-1,1ms进入一次中断
 
 void TIM3_IRQHandler(void)
 {
- static u32 Time_Ms=0;
-	static u32 Time_Last=0;
 	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) 
 	{
 		Time_Ms++;
@@ -124,18 +127,18 @@ void TIM3_IRQHandler(void)
 					if (Time_Ms%10==0)
 				{
 					ANO_AK8975_Read();	
-//					Motor_X->now=Roll,Motor_Y->now=Pitch;
-//						switch(NS)
-//						{	
-//							case Stop: Set_Motor(0,0); break;
-//							case Task1: mode1(); break;
-//							case Task2: mode2(); break;
-//							case Task3: mode3(); break;
-//							case Task4: mode4(); break;
-//							case Task5: mode5(); break;
-//							//case 6: mode6(); break;
-//							default:break;
-//						}	
+					Motor_X->now=Roll,Motor_Y->now=Pitch;
+						switch(NS)
+						{	
+							case Stop: Set_Motor(0,0); break;
+							case Task1: mode1(); break;
+							case Task2: mode2(); break;
+							case Task3: mode3(); break;
+							case Task4: mode4(); break;
+							case Task5: mode5(); break;
+							//case 6: mode6(); break;
+							default:break;
+						}	
 				}	
 		}
 		DataTransferTask(Time_Ms);

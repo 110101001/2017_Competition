@@ -22,6 +22,7 @@
 #include "lcd.h"
 #include "TB6612FNG.h"
 #include "ctrl.h"
+#include "math.h"
 
 #endif
 
