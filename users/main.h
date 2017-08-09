@@ -20,7 +20,8 @@
 #include "gpio.h"
 #include "bsp_flash.h"
 #include "lcd.h"
-
+#include "TB6612FNG.h"
+#include "ctrl.h"
 
 #endif
 

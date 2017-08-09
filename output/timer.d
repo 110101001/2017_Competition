@@ -43,3 +43,5 @@
 .\output\timer.o: .\driver\gpio.h
 .\output\timer.o: .\driver\bsp_flash.h
 .\output\timer.o: .\driver\lcd.h
+.\output\timer.o: .\app\TB6612FNG.h
+.\output\timer.o: .\app\ctrl.h

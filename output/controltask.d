@@ -43,3 +43,5 @@
 .\output\controltask.o: .\driver\gpio.h
 .\output\controltask.o: .\driver\bsp_flash.h
 .\output\controltask.o: .\driver\lcd.h
+.\output\controltask.o: .\app\TB6612FNG.h
+.\output\controltask.o: .\app\ctrl.h

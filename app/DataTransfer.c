@@ -11,6 +11,7 @@ u8 appTosave=0;
 
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
+extern int mode_change_flag;
 
 
 //各种用于数据传输的函数
@@ -239,9 +240,12 @@ void Data_Receive_Anl(u8 *data_buf,u8 num)
 	}
 	if(*(data_buf+2)==0X22){
 			NS=(enum PendulumMode)(*(data_buf+4));
+				mode_change_flag=1;
 		}
 			if(*(data_buf+2)==0X21){
 			NS=Stop;
+			mode_change_flag=1;
+
 		}
 if(*(data_buf+2)==0X02)
 	{

@@ -43,4 +43,6 @@
 .\output\bsp.o: .\driver\gpio.h
 .\output\bsp.o: .\driver\bsp_flash.h
 .\output\bsp.o: .\driver\lcd.h
+.\output\bsp.o: .\app\TB6612FNG.h
+.\output\bsp.o: .\app\ctrl.h
 .\output\bsp.o: driver\ov7670.h

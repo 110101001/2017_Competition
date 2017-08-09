@@ -43,4 +43,6 @@
 .\output\imu.o: .\driver\gpio.h
 .\output\imu.o: .\driver\bsp_flash.h
 .\output\imu.o: .\driver\lcd.h
+.\output\imu.o: .\app\TB6612FNG.h
+.\output\imu.o: .\app\ctrl.h
 .\output\imu.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

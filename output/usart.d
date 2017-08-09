@@ -43,3 +43,5 @@
 .\output\usart.o: .\driver\gpio.h
 .\output\usart.o: .\driver\bsp_flash.h
 .\output\usart.o: .\driver\lcd.h
+.\output\usart.o: .\app\TB6612FNG.h
+.\output\usart.o: .\app\ctrl.h

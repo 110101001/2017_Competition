@@ -20,6 +20,8 @@
 ".\output\imu.o"
 ".\output\mymath.o"
 ".\output\pid.o"
+".\output\tb6612fng.o"
+".\output\ctrl.o"
 ".\output\misc.o"
 ".\output\stm32f4xx_adc.o"
 ".\output\stm32f4xx_can.o"

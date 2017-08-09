@@ -43,3 +43,5 @@
 .\output\mpu6050.o: .\driver\gpio.h
 .\output\mpu6050.o: .\driver\bsp_flash.h
 .\output\mpu6050.o: .\driver\lcd.h
+.\output\mpu6050.o: .\app\TB6612FNG.h
+.\output\mpu6050.o: .\app\ctrl.h

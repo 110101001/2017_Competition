@@ -43,3 +43,5 @@
 .\output\datatransfer.o: .\driver\gpio.h
 .\output\datatransfer.o: .\driver\bsp_flash.h
 .\output\datatransfer.o: .\driver\lcd.h
+.\output\datatransfer.o: .\app\TB6612FNG.h
+.\output\datatransfer.o: .\app\ctrl.h

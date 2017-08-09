@@ -43,3 +43,5 @@
 .\output\ak8975.o: .\driver\gpio.h
 .\output\ak8975.o: .\driver\bsp_flash.h
 .\output\ak8975.o: .\driver\lcd.h
+.\output\ak8975.o: .\app\TB6612FNG.h
+.\output\ak8975.o: .\app\ctrl.h

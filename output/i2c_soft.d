@@ -43,3 +43,5 @@
 .\output\i2c_soft.o: .\driver\gpio.h
 .\output\i2c_soft.o: .\driver\bsp_flash.h
 .\output\i2c_soft.o: .\driver\lcd.h
+.\output\i2c_soft.o: .\app\TB6612FNG.h
+.\output\i2c_soft.o: .\app\ctrl.h

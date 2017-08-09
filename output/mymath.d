@@ -43,3 +43,5 @@
 .\output\mymath.o: .\driver\gpio.h
 .\output\mymath.o: .\driver\bsp_flash.h
 .\output\mymath.o: .\driver\lcd.h
+.\output\mymath.o: .\app\TB6612FNG.h
+.\output\mymath.o: .\app\ctrl.h

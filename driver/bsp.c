@@ -5,6 +5,8 @@ PID_Type MY={0,0,0,0,0,0,0,0,0,0};
 
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
+extern int mode_change_flag;
+
 
  void All_Init(void)
 {
@@ -14,6 +16,7 @@ extern PID_Type* Motor_Y;
 	LED_Configuration();																//LED初始化
 	TIM5_Configuration();																//定时器初始化
 	TIM6_Configuration();																//TIM6初始化
+	TIM3_Configuration();
 	Usart2_Init(115200);																//串口2初始化
 	PWM_Configuration();																//PWM初始化
 	GPIO_Configuration();																//GPIO初始化
@@ -27,7 +30,8 @@ extern PID_Type* Motor_Y;
 	LCD_Clear(WHITE);
 	OV7670_Configuration();
 	InnerLoopInit();																		//内环周期初始化
-	TIM6_Start();																				//ControlLoop开始
+	TIM6_Start();					//ControlLoop开始
+	mode_change_flag=1;
 }
 
 

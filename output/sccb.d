@@ -43,4 +43,6 @@
 .\output\sccb.o: .\driver\gpio.h
 .\output\sccb.o: .\driver\bsp_flash.h
 .\output\sccb.o: .\driver\lcd.h
+.\output\sccb.o: .\app\TB6612FNG.h
+.\output\sccb.o: .\app\ctrl.h
 .\output\sccb.o: driver\sccb.h
