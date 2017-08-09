@@ -127,13 +127,21 @@ void TIM3_IRQHandler(void)
 					if (Time_Ms%10==0)
 				{
 					ANO_AK8975_Read();	
+<<<<<<< HEAD
+=======
+				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
+>>>>>>> fb642fb4721ce647b3cca984ba6c77c52d88c54f
 						switch(NS)
 						{	
 							case Stop:  mode0(); break;
 							case Task1: mode1(); break;
 							case Task2: mode2(); break;
 							case Task3: mode3(); break;
+<<<<<<< HEAD
 							case Task4: mode4(); break;
+=======
+							//case Task4: mode4(); break;
+>>>>>>> fb642fb4721ce647b3cca984ba6c77c52d88c54f
 							//case Task5: mode5(); break;
 							//case 6: mode6(); break;
 							default:break;
