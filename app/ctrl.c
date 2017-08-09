@@ -59,7 +59,7 @@ void mode1(void)
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;
 	pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
-		x_pre=x_pos,y_pre=y_pos;
+	x_pre=x_pos,y_pre=y_pos;
 
 }
 

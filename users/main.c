@@ -1,11 +1,14 @@
 #include "main.h"
+
 extern enum PendulumMode NS;			
+extern char mode;
 
 int main(){
-	
 	All_Init();
-	NS=Stop;
-	while(1) Get_KeyValue();
+	mode=0;
+	while(1){
+		mode=KEY_Scan();
+	}
+	
 }
-
 

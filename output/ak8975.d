@@ -2,7 +2,7 @@
 .\output\ak8975.o: .\users\main.h
 .\output\ak8975.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\ak8975.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\ak8975.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\ak8975.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\ak8975.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\ak8975.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\ak8975.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\ak8975.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\ak8975.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\ak8975.o: .\libraries\STLibraries\misc.h
-.\output\ak8975.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\ak8975.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\ak8975.o: .\app\mymath.h
 .\output\ak8975.o: .\driver\led.h
 .\output\ak8975.o: .\driver\timer.h
@@ -45,6 +45,6 @@
 .\output\ak8975.o: .\driver\lcd.h
 .\output\ak8975.o: .\app\TB6612FNG.h
 .\output\ak8975.o: .\app\ctrl.h
-.\output\ak8975.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\output\ak8975.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\ak8975.o: .\driver\key.h
 .\output\ak8975.o: .\driver\exti.h
