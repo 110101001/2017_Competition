@@ -528,6 +528,16 @@
               <FileType>1</FileType>
               <FilePath>.\app\pid.c</FilePath>
             </File>
+            <File>
+              <FileName>ctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\ctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>TB6612FNG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\app\TB6612FNG.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

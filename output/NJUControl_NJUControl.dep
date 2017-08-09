@@ -1,5 +1,5 @@
 Dependencies for Project 'NJUControl', Target 'NJUControl': (DO NOT MODIFY !)
-F (.\users\main.c)(0x598A6881)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
+F (.\users\main.c)(0x598AB127)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
 I (users\main.h)(0x598A94EB)
 I (.\libraries\STLibraries\stm32f4xx.h)(0x5987CAB9)
 I (.\libraries\CMSIS\Include\core_cm4.h)(0x5987CAB9)
@@ -44,7 +44,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\users\startup_stm32f40xx.s)(0x5987CAB9)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "STM32F407xx SETA 1"--list .\output\startup_stm32f40xx.lst --xref -o .\output\startup_stm32f40xx.o --depend .\output\startup_stm32f40xx.d)
 F (.\users\stm32f4xx_conf.h)(0x5987CAB9)()
@@ -93,9 +93,9 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (.\driver\bsp.c)(0x598A8A72)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\bsp.o --omf_browse .\output\bsp.crf --depend .\output\bsp.d)
+F (.\driver\bsp.c)(0x598AB127)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\bsp.o --omf_browse .\output\bsp.crf --depend .\output\bsp.d)
 I (.\users\main.h)(0x598A94EB)
 I (.\libraries\STLibraries\stm32f4xx.h)(0x5987CAB9)
 I (.\libraries\CMSIS\Include\core_cm4.h)(0x5987CAB9)
@@ -140,7 +140,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (driver\ov7670.h)(0x5987CAB7)
 F (.\driver\bsp_flash.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\bsp_flash.o --omf_browse .\output\bsp_flash.crf --depend .\output\bsp_flash.d)
@@ -214,7 +214,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\i2c_soft.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\i2c_soft.o --omf_browse .\output\i2c_soft.crf --depend .\output\i2c_soft.d)
 I (.\users\main.h)(0x598A94EB)
@@ -261,7 +261,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\led.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\led.o --omf_browse .\output\led.crf --depend .\output\led.d)
 I (.\users\main.h)(0x598A94EB)
@@ -308,7 +308,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\mpu6050.c)(0x5987E4A8)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\mpu6050.o --omf_browse .\output\mpu6050.crf --depend .\output\mpu6050.d)
 I (.\users\main.h)(0x598A94EB)
@@ -355,7 +355,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\pwm.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\pwm.o --omf_browse .\output\pwm.crf --depend .\output\pwm.d)
 I (.\users\main.h)(0x598A94EB)
@@ -402,9 +402,9 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (.\driver\timer.c)(0x598A8A72)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\timer.o --omf_browse .\output\timer.crf --depend .\output\timer.d)
+F (.\driver\timer.c)(0x598AB127)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\timer.o --omf_browse .\output\timer.crf --depend .\output\timer.d)
 I (.\users\main.h)(0x598A94EB)
 I (.\libraries\STLibraries\stm32f4xx.h)(0x5987CAB9)
 I (.\libraries\CMSIS\Include\core_cm4.h)(0x5987CAB9)
@@ -449,7 +449,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\usart.c)(0x598A8A72)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\usart.o --omf_browse .\output\usart.crf --depend .\output\usart.d)
 I (.\users\main.h)(0x598A94EB)
@@ -496,7 +496,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\driver\lcd.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\lcd.o --omf_browse .\output\lcd.crf --depend .\output\lcd.d)
 I (.\users\main.h)(0x598A94EB)
@@ -543,7 +543,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (driver\cfont.h)(0x5987CAB7)
 I (C:\Keil_v55\ARM\ARMCC\include\stdlib.h)(0x5475F300)
@@ -592,7 +592,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (driver\sccb.h)(0x5987CAB7)
 I (driver\ov7670.h)(0x5987CAB7)
@@ -641,7 +641,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 I (driver\sccb.h)(0x5987CAB7)
 F (.\app\ControlTask.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\controltask.o --omf_browse .\output\controltask.crf --depend .\output\controltask.d)
@@ -689,7 +689,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\app\DataTransfer.c)(0x598A6B00)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\datatransfer.o --omf_browse .\output\datatransfer.crf --depend .\output\datatransfer.d)
 I (.\users\main.h)(0x598A94EB)
@@ -736,7 +736,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\app\filter.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\filter.o --omf_browse .\output\filter.crf --depend .\output\filter.d)
 I (.\users\main.h)(0x598A94EB)
@@ -783,7 +783,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\app\imu.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\imu.o --omf_browse .\output\imu.crf --depend .\output\imu.d)
 I (.\users\main.h)(0x598A94EB)
@@ -830,7 +830,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\app\mymath.c)(0x5987CAB7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\mymath.o --omf_browse .\output\mymath.crf --depend .\output\mymath.d)
 I (.\users\main.h)(0x598A94EB)
@@ -877,7 +877,7 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\app\pid.c)(0x598A8A72)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\pid.o --omf_browse .\output\pid.crf --depend .\output\pid.d)
 I (.\users\main.h)(0x598A94EB)
@@ -924,9 +924,9 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (.\app\ctrl.c)(0x598A94EB)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\ctrl.o --omf_browse .\output\ctrl.crf --depend .\output\ctrl.d)
+F (.\app\ctrl.c)(0x598AB127)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\ctrl.o --omf_browse .\output\ctrl.crf --depend .\output\ctrl.d)
 I (.\users\main.h)(0x598A94EB)
 I (.\libraries\STLibraries\stm32f4xx.h)(0x5987CAB9)
 I (.\libraries\CMSIS\Include\core_cm4.h)(0x5987CAB9)
@@ -971,7 +971,54 @@ I (.\driver\gpio.h)(0x598A66C2)
 I (.\driver\bsp_flash.h)(0x5987CAB7)
 I (.\driver\lcd.h)(0x5987CAB7)
 I (.\app\TB6612FNG.h)(0x598A66C2)
-I (.\app\ctrl.h)(0x598A8A72)
+I (.\app\ctrl.h)(0x598AA7E4)
+I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
+F (.\app\TB6612FNG.c)(0x598A66C2)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\tb6612fng.o --omf_browse .\output\tb6612fng.crf --depend .\output\tb6612fng.d)
+I (.\users\main.h)(0x598A94EB)
+I (.\libraries\STLibraries\stm32f4xx.h)(0x5987CAB9)
+I (.\libraries\CMSIS\Include\core_cm4.h)(0x5987CAB9)
+I (C:\Keil_v55\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (.\libraries\CMSIS\Include\core_cmInstr.h)(0x5987CAB9)
+I (.\libraries\CMSIS\Include\core_cmFunc.h)(0x5987CAB9)
+I (.\libraries\CMSIS\Include\core_cm4_simd.h)(0x5987CAB9)
+I (.\libraries\STLibraries\system_stm32f4xx.h)(0x5987CAB9)
+I (.\users\stm32f4xx_conf.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_adc.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_can.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_crc.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_dcmi.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_dma.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_exti.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_flash.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_fsmc.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_gpio.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_i2c.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_rcc.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_spi.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_syscfg.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_tim.h)(0x5987CAB9)
+I (.\libraries\STLibraries\stm32f4xx_usart.h)(0x5987CAB9)
+I (.\libraries\STLibraries\misc.h)(0x5987CAB9)
+I (C:\Keil_v55\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (.\app\mymath.h)(0x5987CAB7)
+I (.\driver\led.h)(0x5987CAB7)
+I (.\driver\timer.h)(0x5988640E)
+I (.\driver\usart.h)(0x5987CAB7)
+I (.\driver\bsp.h)(0x5987CAB7)
+I (.\app\DataTransfer.h)(0x5988640E)
+I (.\app\ControlTask.h)(0x5987CAB7)
+I (.\driver\mpu6050.h)(0x5987CAB7)
+I (.\app\pid.h)(0x597F0D4C)
+I (.\driver\pwm.h)(0x5987DE04)
+I (.\driver\i2c_soft.h)(0x5987CAB7)
+I (.\driver\ak8975.h)(0x5987CAB7)
+I (.\app\imu.h)(0x5987CAB7)
+I (.\app\filter.h)(0x5987CAB7)
+I (.\driver\gpio.h)(0x598A66C2)
+I (.\driver\bsp_flash.h)(0x5987CAB7)
+I (.\driver\lcd.h)(0x5987CAB7)
+I (.\app\TB6612FNG.h)(0x598A66C2)
+I (.\app\ctrl.h)(0x598AA7E4)
 I (C:\Keil_v55\ARM\ARMCC\include\math.h)(0x5475F2FE)
 F (.\libraries\STLibraries\misc.c)(0x5987CAB9)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I.\app -I.\driver -I.\libraries\STLibraries -I.\users -I.\libraries\CMSIS\Include -I.\app -I.\driver -I.\users-I C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE-I C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0-I C:\Keil_v55\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\output\misc.o --omf_browse .\output\misc.crf --depend .\output\misc.d)
 I (libraries\STLibraries\misc.h)(0x5987CAB9)

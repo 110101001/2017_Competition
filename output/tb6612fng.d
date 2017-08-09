@@ -45,3 +45,4 @@
 .\output\tb6612fng.o: .\driver\lcd.h
 .\output\tb6612fng.o: .\app\TB6612FNG.h
 .\output\tb6612fng.o: .\app\ctrl.h
+.\output\tb6612fng.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h

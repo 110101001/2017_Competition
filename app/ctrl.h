@@ -20,7 +20,7 @@
 #define C9X 52.5
 #define C9Y 52.5
 
-
+void mode0(void);
 void mode1(void);
 void mode2(void);
 void mode3(void);

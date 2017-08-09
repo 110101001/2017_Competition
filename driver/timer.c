@@ -127,15 +127,14 @@ void TIM3_IRQHandler(void)
 					if (Time_Ms%10==0)
 				{
 					ANO_AK8975_Read();	
-					Motor_X->now=Roll,Motor_Y->now=Pitch;
 						switch(NS)
 						{	
-							case Stop: Set_Motor(0,0); break;
+							case Stop:  mode0(); break;
 							case Task1: mode1(); break;
 							case Task2: mode2(); break;
 							case Task3: mode3(); break;
 							case Task4: mode4(); break;
-							case Task5: mode5(); break;
+							//case Task5: mode5(); break;
 							//case 6: mode6(); break;
 							default:break;
 						}	

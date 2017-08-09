@@ -3,9 +3,9 @@
 int mode;
 int mode_change_flag;
 int time;
-int move_state;
 extern float Roll,Pitch,Yaw;
 uint32_t time_count_begin;
+int static_time_begin;
 
 extern PID_Type* Speed_X;
 extern PID_Type* Speed_Y;
@@ -16,6 +16,24 @@ extern PID_Type* Motor_Y;
 unsigned int x_pre,y_pre;
 unsigned int x_pos,y_pos;//在usart.c中进行更新
 double x_speed,y_speed;
+
+/*====================================================
+Mode0功能：平板调节至水平
+====================================================*/
+void mode0(void)
+{
+		if(mode_change_flag==1)
+	{
+		set_pid(Motor_X,0,0,0);
+	  set_pid(Motor_Y,0,0,0);
+		time_count_begin=TIM5->CNT;		
+		Motor_X->ref=Motor_Y->ref=0;
+		mode_change_flag=0;
+	}
+	Motor_X->now=Roll,Motor_Y->now=Pitch;
+  pid_cal(Motor_X),pid_cal(Motor_Y);
+	Set_Motor(Motor_X->output,Motor_Y->output);
+}
 
 /*====================================================
 Mode1功能：将小球放在位置2，停留不少于5s
@@ -80,23 +98,30 @@ Mode3功能：从1进入4，停留不少于2s，
 ====================================================*/
 void mode3(void)
 {
-			if(mode_change_flag==1)
+	if(mode_change_flag==1)
 	{
 		set_pid(Speed_X,0,0,0);
 	  set_pid(Speed_Y,0,0,0);		
 		set_pid(Motor_X,0,0,0);
 	  set_pid(Motor_Y,0,0,0);
-		time_count_begin=TIM5->CNT;		
+		static_time_begin=time_count_begin=TIM5->CNT;		
 		mode_change_flag=0;
 		x_pre=x_pos,y_pre=y_pos;
-		move_state=0;//从1进入4
 	}
   time=(TIM5->CNT - time_count_begin);
 	time_count_begin=TIM5->CNT;		
 	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
-	if(move_state==0)//从1进入4
+	if((TIM5->CNT-static_time_begin)/1000000.0f<=9)//9秒以内完成
 	{
-		if(abs(x_pos-x_pre)<1)
+	Speed_X->ref=C4X,Speed_X->now=x_pos,Speed_Y->ref=C4Y,Speed_Y->now=y_pos;
+  pid_cal(Speed_X),pid_cal(Speed_Y);
+	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
+	Motor_X->now=x_speed,Motor_Y->now=y_speed;
+	pid_cal(Motor_X),pid_cal(Motor_Y);
+  Set_Motor(Motor_X->output,Motor_Y->output);	
+	}
+	else
+	{	
 	Speed_X->ref=C5X,Speed_X->now=x_pos,Speed_Y->ref=C5Y,Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
