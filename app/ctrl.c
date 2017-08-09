@@ -1,6 +1,6 @@
 #include "main.h"
 
-int mode;
+u8 mode;
 int mode_change_flag;
 int time;
 extern float Roll,Pitch,Yaw;
