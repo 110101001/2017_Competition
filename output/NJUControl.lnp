@@ -13,7 +13,6 @@
 ".\output\usart.o"
 ".\output\lcd.o"
 ".\output\sccb.o"
-".\output\exti.o"
 ".\output\key.o"
 ".\output\tb6612fng.o"
 ".\output\controltask.o"
