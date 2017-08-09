@@ -93,6 +93,7 @@ void Mode_Task(void)
 {
 	char temp;
 	int i=0;
+	LCD_Clear(BLACK);
 	for (i=1;i<String_LENGTH+1;i++){LCD_DisplayString(40,i*30,16,(u8*)Info_String[i-1]);}
 	BACK_COLOR=RED;
 	LCD_DisplayString(40,30*step,16,(u8*)Info_String[step-1]);
