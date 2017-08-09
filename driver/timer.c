@@ -31,6 +31,7 @@ void Delay_us(uint32_t us)										//用TIM2的计数值来做到精确延时
 {
     uint32_t now = Get_Time_Micros();
     while (Get_Time_Micros() - now < us);
+		return;
 }
 
 void Delay_ms(uint32_t ms)
@@ -72,7 +73,7 @@ void TIM6_DAC_IRQHandler(void)									//TIM6的回调函数1ms调用一次，用于精确进入
 	  {
 			TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
 			TIM_ClearFlag(TIM6, TIM_FLAG_Update);
-			ControlLoop();
+			//ControlLoop();
     }
 
 }
@@ -96,12 +97,12 @@ void TIM3_Configuration(void)//1000-1,84-1,1ms进入一次中断
 {
 	  NVIC_InitTypeDef NVIC_InitStructure;
     TIM_TimeBaseInitTypeDef tim;
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE);
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
     tim.TIM_Period = 999;
     tim.TIM_Prescaler = 83;	 //1M 的时钟  
 	  tim.TIM_ClockDivision=TIM_CKD_DIV1; 	
-	  TIM_TimeBaseInit(TIM5,&tim);
-	  TIM_ITConfig(TIM5,TIM_IT_Update,ENABLE); //允许更新中断
+	  TIM_TimeBaseInit(TIM3,&tim);
+	  TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE); //允许更新中断
 	  TIM_Cmd(TIM3,ENABLE); 
 	
 		NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;  //TIM5中断
@@ -127,21 +128,15 @@ void TIM3_IRQHandler(void)
 					if (Time_Ms%10==0)
 				{
 					ANO_AK8975_Read();	
-<<<<<<< HEAD
-=======
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
->>>>>>> fb642fb4721ce647b3cca984ba6c77c52d88c54f
 						switch(NS)
 						{	
 							case Stop:  mode0(); break;
 							case Task1: mode1(); break;
 							case Task2: mode2(); break;
 							case Task3: mode3(); break;
-<<<<<<< HEAD
 							case Task4: mode4(); break;
-=======
 							//case Task4: mode4(); break;
->>>>>>> fb642fb4721ce647b3cca984ba6c77c52d88c54f
 							//case Task5: mode5(); break;
 							//case 6: mode6(); break;
 							default:break;
@@ -149,7 +144,7 @@ void TIM3_IRQHandler(void)
 				}	
 		}
 		DataTransferTask(Time_Ms);
-	TIM_ClearITPendingBit(TIM5,TIM_IT_Update);
+	TIM_ClearITPendingBit(TIM3,TIM_IT_Update);
 }
 }
 

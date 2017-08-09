@@ -23,6 +23,8 @@
 #include "TB6612FNG.h"
 #include "ctrl.h"
 #include "math.h"
+#include "key.h"
+#include "exti.h"
 
 #endif
 
