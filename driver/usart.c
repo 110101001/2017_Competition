@@ -1,7 +1,8 @@
 #include "main.h"
-
+#define USART_REC_LEN 200
 extern double x_pos,y_pos;
-
+u8 USART_RX_BUF[USART_REC_LEN];
+u16 USART_RX_STA=0; 
 /*----------USART1---PA9---PA10----*/
 /*----------USART2---PD5---PD6-----*/
 /************************************/
@@ -82,14 +83,65 @@ void Usart1_Init(u32 br_num)
 
 void USART1_IRQHandler(void)
 {
-	u8 com_data;
+	u8 len;
+	u8 count=0;
+	int x_pos=0,y_pos=0;
+	u8 res;	
 	if( USART_GetITStatus(USART1,USART_IT_RXNE) )					//如果是接收中断
 	{
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);
-		com_data = USART1->DR;
-		Usart1_DataPrepare(com_data);												//数据解析
-
-	}
+		
+	
+	if(USART1->SR&(1<<5))//接收到数据
+	{	 
+		res=USART1->DR; 
+		if((USART_RX_STA&0x8000)==0)//接收未完成
+		{
+			if(USART_RX_STA&0x4000)//接收到了0x0d
+			{
+				if(res!=0x0a)USART_RX_STA=0;//接收错误,重新开始
+				else USART_RX_STA|=0x8000;	//接收完成了 
+			}else //还没收到0X0D
+			{	
+				if(res==0x0d)USART_RX_STA|=0x4000;
+				else
+				{
+					USART_RX_BUF[USART_RX_STA&0X3FFF]=res;
+					USART_RX_STA++;
+					if(USART_RX_STA>(USART_REC_LEN-1))USART_RX_STA=0;//接收数据错误,重新开始接收	  
+				}		 
+			}
+		}  		 									     
+	} 
+		//USART1->DR='A';
+		//USART1->DR='\n';
+		//delay_ms(500);
+		if( USART_RX_STA&0x8000)              //接收完成
+		{
+			len=USART_RX_STA&0x3fff;          //看字节数
+			//for(count=0;count<len;count++)    //一个一个字节处理
+			//{
+				//value[count]=USART_RX_BUF[count]-48;
+				
+			//}
+			//if(USART_RX_BUF[count++]=='\n'){
+			for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
+					x_pos*=10;
+					x_pos+=USART_RX_BUF[count]-'0';
+			}	
+			count++;
+			for(;USART_RX_BUF[count]!='\n'&&count<len;count++){
+					y_pos*=10;
+					y_pos+=USART_RX_BUF[count]-'0';
+			}					
+			//}
+			//printf("\r\n");
+			USART_RX_STA=0;                       //此次接受的数据用完，接收标志清零
+			for (count=0;count<len;count++){
+				USART_RX_BUF[count]=0;
+			}
+		}
+	}		
 }
 
 
