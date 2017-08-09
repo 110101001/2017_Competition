@@ -2,7 +2,7 @@
 .\output\ov7670.o: .\users\main.h
 .\output\ov7670.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\ov7670.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\ov7670.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\ov7670.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\ov7670.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\ov7670.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\ov7670.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\ov7670.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\ov7670.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\ov7670.o: .\libraries\STLibraries\misc.h
-.\output\ov7670.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\ov7670.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\ov7670.o: .\app\mymath.h
 .\output\ov7670.o: .\driver\led.h
 .\output\ov7670.o: .\driver\timer.h
@@ -45,6 +45,8 @@
 .\output\ov7670.o: .\driver\lcd.h
 .\output\ov7670.o: .\app\TB6612FNG.h
 .\output\ov7670.o: .\app\ctrl.h
-.\output\ov7670.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\ov7670.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\output\ov7670.o: .\driver\key.h
+.\output\ov7670.o: .\driver\exti.h
 .\output\ov7670.o: driver\sccb.h
 .\output\ov7670.o: driver\ov7670.h

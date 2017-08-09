@@ -2,7 +2,7 @@
 .\output\pid.o: .\users\main.h
 .\output\pid.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\pid.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\pid.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\pid.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\pid.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\pid.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\pid.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\pid.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\pid.o: .\libraries\STLibraries\misc.h
-.\output\pid.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\pid.o: .\app\mymath.h
 .\output\pid.o: .\driver\led.h
 .\output\pid.o: .\driver\timer.h
@@ -45,4 +45,6 @@
 .\output\pid.o: .\driver\lcd.h
 .\output\pid.o: .\app\TB6612FNG.h
 .\output\pid.o: .\app\ctrl.h
-.\output\pid.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\output\pid.o: .\driver\key.h
+.\output\pid.o: .\driver\exti.h

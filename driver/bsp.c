@@ -33,7 +33,7 @@ extern int mode_change_flag;
 	delay_ms(100);
 	LCD_Init();
 	LCD_Clear(WHITE);
-	OV7670_Configuration();
+	//OV7670_Configuration();
 	InnerLoopInit();																		//内环周期初始化
 	TIM6_Start();					//ControlLoop开始
 	mode_change_flag=1;
