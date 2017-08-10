@@ -220,7 +220,7 @@ void MPU6050_Data_Offset()
 {
 #ifdef ACC_ADJ_EN
 
-    if(mpu6050.Acc_CALIBRATE == 1)
+    if(1)
     {
         if(my_sqrt(my_pow(mpu6050.Acc_I16.x)+my_pow(mpu6050.Acc_I16.y)+my_pow(mpu6050.Acc_I16.z)) < 2500)
         {
@@ -254,7 +254,7 @@ void MPU6050_Data_Offset()
 
 #endif
 
-    if(mpu6050.Gyro_CALIBRATE)
+    if(1)
     {
         gyro_sum_cnt++;
         sum_temp[G_X] += mpu6050.Gyro_I16.x;
@@ -269,7 +269,7 @@ void MPU6050_Data_Offset()
             mpu6050.Gyro_Offset.z = (float)sum_temp[G_Z]/OFFSET_AV_NUM;
             mpu6050.Gyro_Temprea_Offset = sum_temp[TEM]/OFFSET_AV_NUM;
             gyro_sum_cnt =0;
-            if(mpu6050.Gyro_CALIBRATE == 1)
+            if(1)
                //Param_SaveGyroOffset(&mpu6050.Gyro_Offset);
             mpu6050.Gyro_CALIBRATE = 0;
 		//	f.msg_id = 2;
@@ -300,9 +300,7 @@ void MPU6050_Data_Prepare(float T)
     s32 FILT_TMP[ITEMS] = {0,0,0,0,0,0,0};
 //	float auto_offset_temp[3];
     float Gyro_tmp[3];
-
-
-    MPU6050_Data_Offset(); //校准函数
+    //MPU6050_Data_Offset(); //校准函数
 
     /*读取buffer原始数据*/
     mpu6050.Acc_I16.x = ((((int16_t)mpu6050_buffer[0]) << 8) | mpu6050_buffer[1]) ;

@@ -209,35 +209,39 @@ void Data_Receive_Anl(u8 *data_buf,u8 num)
 		sum += *(data_buf+i);
 	if(!(sum==*(data_buf+num-1)))		return;						//??????return
 	if(!(*(data_buf)==0xAA && *(data_buf+1)==0xAF))		return;	//????????return
-	if(*(data_buf+2)==0X01)														//?????
-	{
-		if(*(data_buf+4)==0X01)
-		{
-			mpu6050.Acc_CALIBRATE = 1;
-		}
-		else if(*(data_buf+4)==0X02)
-			mpu6050.Gyro_CALIBRATE = 1;
-		else if(*(data_buf+4)==0X03)
-		{
-			mpu6050.Acc_CALIBRATE = 1;		
-			mpu6050.Gyro_CALIBRATE = 1;	
-		}
-		else if(*(data_buf+4)==0X04)
-		{
-			Mag_CALIBRATED = 1;		
+	
+/*=====================================
+	直接在开机时校准一次
+=======================================*/
+//	if(*(data_buf+2)==0X01)														//?????
+//	{
+//		if(*(data_buf+4)==0X01)
+//		{
+//			mpu6050.Acc_CALIBRATE = 1;
+//		}
+//		else if(*(data_buf+4)==0X02)
+//			mpu6050.Gyro_CALIBRATE = 1;
+//		else if(*(data_buf+4)==0X03)
+//		{
+//			mpu6050.Acc_CALIBRATE = 1;		
+//			mpu6050.Gyro_CALIBRATE = 1;	
+//		}
+//		else if(*(data_buf+4)==0X04)
+//		{
+//			Mag_CALIBRATED = 1;		
 
-		}
-		else if (*(data_buf+4)==0X05)
-		{
-			//AppParamSave();
-		}
-		else if((*(data_buf+4)>=0X021)&&(*(data_buf+4)<=0X26))
-		{
-		}
-		else if(*(data_buf+4)==0X20)
-		{
-		}
-	}
+//		}
+//		else if (*(data_buf+4)==0X05)
+//		{
+//			//AppParamSave();
+//		}
+//		else if((*(data_buf+4)>=0X021)&&(*(data_buf+4)<=0X26))
+//		{
+//		}
+//		else if(*(data_buf+4)==0X20)
+//		{
+//		}
+//	}
 	if(*(data_buf+2)==0X22){
 			NS=(enum PendulumMode)(*(data_buf+4));
 				mode_change_flag=1;

@@ -3,6 +3,7 @@
 extern double speed_x,speed_y;
 static u32 Time_Ms=0;
 static u32 Time_Last=0;
+extern u8 mode;
 
 /*----TIM2---TIM6-----*/
 void TIM5_Configuration(void)//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
@@ -129,13 +130,13 @@ void TIM3_IRQHandler(void)
 				{
 					ANO_AK8975_Read();	
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
-						switch(NS)
+						switch(mode)
 						{	
-							case Stop:  mode0(); break;
-							case Task1: mode1(); break;
-							case Task2: mode2(); break;
-							case Task3: mode3(); break;
-							case Task4: mode4(); break;
+							case 0:  mode0(); break;
+							case 1: mode1(); break;
+							case 2: mode2(); break;
+							case 3: mode3(); break;
+							case 4: mode4(); break;
 							//case Task4: mode4(); break;
 							//case Task5: mode5(); break;
 							//case 6: mode6(); break;

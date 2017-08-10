@@ -24,7 +24,7 @@ void mode0(void)
 {
 		if(mode_change_flag==1)
 	{
-		set_pid(Motor_X,0,0,0);
+		set_pid(Motor_X,100,0,0);
 	  set_pid(Motor_Y,0,0,0);
 		time_count_begin=TIM5->CNT;		
 		Motor_X->ref=Motor_Y->ref=0;

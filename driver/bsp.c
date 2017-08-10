@@ -20,7 +20,7 @@ extern int mode_change_flag;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    
 	LED_Configuration();																//LED初始化
 	TIM5_Configuration();																//定时器初始化
-	TIM6_Configuration();																//TIM6初始化
+	//TIM6_Configuration();																//TIM6初始化
 	TIM3_Configuration();
 	Usart1_Init(38400);																//串口1初始化
 	Usart2_Init(115200);																//串口2初始化
@@ -33,14 +33,12 @@ extern int mode_change_flag;
 	ak8975_ok = !(ANO_AK8975_Run());										//磁力计初始化
 	delay_ms(100);
 	LCD_Init();
-	
 	LCD_Clear(WHITE);
 	//OV7670_Configuration();
 	Key_Configuration();
-	Get_KeyValue();
-	EXTI_Configuration();
 	InnerLoopInit();																		//内环周期初始化
 	TIM6_Start();					//ControlLoop开始
+	//MPU6050_Data_Offset();//校准
 	mode_change_flag=1;
 }
 

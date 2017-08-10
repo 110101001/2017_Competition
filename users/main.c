@@ -3,15 +3,16 @@
 			
 extern enum PendulumMode NS;			
 extern u8 mode;
+extern int mode_change_flag;
+
 char String[7][20]={{"Stop:Stay"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"}};
 int main(){
 	int i;
-	//All_Init();
-	//mode=0;
-	//interface();
-	GPIO_Configuration();
-  X_IN1=X_IN2=Y_IN1=Y_IN2=1;
+	All_Init();
+	for(i=0;i<1000000;i++)
+	 MPU6050_Data_Offset();
 	while(1);
+	//interface();
 }
 
 void interface(){
@@ -38,6 +39,7 @@ void interface(){
 					DISPLAY
 				}
 			}
+			if(mode!=step) mode_change_flag=1;
 			mode=step;
 			LCD_Clear(BLACK);
 		}
