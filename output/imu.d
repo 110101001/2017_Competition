@@ -47,4 +47,3 @@
 .\output\imu.o: .\app\ctrl.h
 .\output\imu.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\imu.o: .\driver\key.h
-.\output\imu.o: .\driver\exti.h

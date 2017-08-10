@@ -38,7 +38,6 @@ extern int mode_change_flag;
 	Key_Configuration();
 	InnerLoopInit();																		//内环周期初始化
 	TIM6_Start();					//ControlLoop开始
-	//MPU6050_Data_Offset();//校准
 	mode_change_flag=1;
 }
 

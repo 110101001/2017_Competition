@@ -17,16 +17,19 @@ unsigned int x_pre,y_pre;
 unsigned int x_pos,y_pos;//在usart.c中进行更新
 double x_speed,y_speed;
 
+void mode0(void)//停
+{
+	Set_Motor(0,0);
+}
 /*====================================================
-Mode0功能：平板调节至水平
+calibration功能：平板调节至水平
 ====================================================*/
-void mode0(void)
+void calibration(void)
 {
 		if(mode_change_flag==1)
 	{
-		set_pid(Motor_X,100,0,0);
-	  set_pid(Motor_Y,0,0,0);
-		time_count_begin=TIM5->CNT;		
+		set_pid(Motor_X,500,0,0);
+	  set_pid(Motor_Y,500,0,0);
 		Motor_X->ref=Motor_Y->ref=0;
 		mode_change_flag=0;
 	}
@@ -53,14 +56,13 @@ void mode1(void)
 	time=(TIM5->CNT - time_count_begin);
 	time_count_begin=TIM5->CNT;		
 	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
-	Speed_X->ref=C2X,Speed_X->now=x_pos,Speed_Y->ref=C2Y,Speed_Y->now=y_pos;
+	Speed_X->ref=160,Speed_X->now=x_pos,Speed_Y->ref=160,Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;
 	pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
 	x_pre=x_pos,y_pre=y_pos;
-
 }
 
 /*====================================================
@@ -163,6 +165,5 @@ void mode4(void)
 //=====================发挥部分======================
 void mode5(void);
 void mode6(void);
-
-extern uint32_t time_count_begin;
+void mode7(void);
 

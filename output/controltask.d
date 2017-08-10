@@ -47,4 +47,3 @@
 .\output\controltask.o: .\app\ctrl.h
 .\output\controltask.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\controltask.o: .\driver\key.h
-.\output\controltask.o: .\driver\exti.h

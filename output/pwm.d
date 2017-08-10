@@ -47,4 +47,3 @@
 .\output\pwm.o: .\app\ctrl.h
 .\output\pwm.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\pwm.o: .\driver\key.h
-.\output\pwm.o: .\driver\exti.h

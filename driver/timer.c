@@ -132,7 +132,8 @@ void TIM3_IRQHandler(void)
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
 						switch(mode)
 						{	
-							case 0:  mode0(); break;
+							case CALIBRATION: calibration();break;
+							case 0: mode0(); break;
 							case 1: mode1(); break;
 							case 2: mode2(); break;
 							case 3: mode3(); break;

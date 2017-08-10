@@ -47,5 +47,4 @@
 .\output\bsp.o: .\app\ctrl.h
 .\output\bsp.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\bsp.o: .\driver\key.h
-.\output\bsp.o: .\driver\exti.h
 .\output\bsp.o: driver\ov7670.h

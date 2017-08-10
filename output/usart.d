@@ -47,4 +47,3 @@
 .\output\usart.o: .\app\ctrl.h
 .\output\usart.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\usart.o: .\driver\key.h
-.\output\usart.o: .\driver\exti.h

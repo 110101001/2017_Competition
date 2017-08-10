@@ -27,7 +27,7 @@ void Y_Backward(int pwm)
 
 void Set_Motor(float pwm1,float pwm2)//x方向，y方向
 {
-	if(pwm1 >= 0)
+	if(pwm1 > 0)
 	{
      X_Forward((int)pwm1);
 	}
@@ -35,8 +35,13 @@ void Set_Motor(float pwm1,float pwm2)//x方向，y方向
 	{
      X_Backward((int)(-pwm1));
 	}
+	else if(pwm1==0)
+	{
+		DUTY1=0;
+	  X_IN1=X_IN2=0;
+	}
 
-	if(pwm2 >= 0)
+	if(pwm2 > 0)
 	{
      Y_Forward((int)pwm2);
 	}
@@ -44,4 +49,9 @@ void Set_Motor(float pwm1,float pwm2)//x方向，y方向
 	{
      Y_Backward((int)(-pwm2));
 	} 	
+	else if(pwm2==0)
+	{
+		DUTY2=0;
+		Y_IN1=Y_IN2=0;
+	}
 }

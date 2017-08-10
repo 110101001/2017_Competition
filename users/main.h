@@ -24,7 +24,6 @@
 #include "ctrl.h"
 #include "math.h"
 #include "key.h"
-#include "exti.h"
 void interface(void);
 #endif
 

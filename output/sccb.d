@@ -47,5 +47,4 @@
 .\output\sccb.o: .\app\ctrl.h
 .\output\sccb.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\sccb.o: .\driver\key.h
-.\output\sccb.o: .\driver\exti.h
 .\output\sccb.o: driver\sccb.h

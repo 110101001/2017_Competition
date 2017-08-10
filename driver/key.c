@@ -24,29 +24,26 @@ void Key_Configuration(void)
 	
 	
 	}
-void EXTI_Configuration(void)
-{
-	EXTI_InitTypeDef EXTI_InitStructure;
-	NVIC_InitTypeDef NVIC_InitStructure;
+//void EXTI_Configuration(void)
+//{
+//	EXTI_InitTypeDef EXTI_InitStructure;
+//	NVIC_InitTypeDef NVIC_InitStructure;
 
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-	
-  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB,EXTI_PinSource0);//PA8对中断线8
-	EXTI_InitStructure.EXTI_Line=EXTI_Line0;
-  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;	
-  EXTI_InitStructure.EXTI_Trigger =   EXTI_Trigger_Falling;
-  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-  //EXTI_Init(&EXTI_InitStructure);		//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
-	
-	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;			//使能按键所在的外部中断通道
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	//抢占优先级0 
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;					//子优先级0 
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;								//使能外部中断通道
-  NVIC_Init(&NVIC_InitStructure);  	  //根据NVIC_InitStruct中指定的参数初始化外设NVIC寄存器 
-
-
-
-}
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+//	
+//  SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB,EXTI_PinSource0);//PA8对中断线8
+//	EXTI_InitStructure.EXTI_Line=EXTI_Line0;
+//  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;	
+//  EXTI_InitStructure.EXTI_Trigger =   EXTI_Trigger_Falling;
+//  EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+//  //EXTI_Init(&EXTI_InitStructure);		//根据EXTI_InitStruct中指定的参数初始化外设EXTI寄存器
+//	
+//	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;			//使能按键所在的外部中断通道
+//  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	//抢占优先级0 
+//  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;					//子优先级0 
+//  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;								//使能外部中断通道
+//  NVIC_Init(&NVIC_InitStructure);  	  //根据NVIC_InitStruct中指定的参数初始化外设NVIC寄存器 
+//}
 static const char Key_Mem[4][4]={{'1','2','3','A'},
 																		{'4','5','6','B'},
 																		{'7','8','9','C'},

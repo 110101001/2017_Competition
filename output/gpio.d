@@ -47,4 +47,3 @@
 .\output\gpio.o: .\app\ctrl.h
 .\output\gpio.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\gpio.o: .\driver\key.h
-.\output\gpio.o: .\driver\exti.h

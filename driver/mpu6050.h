@@ -427,5 +427,7 @@ void MPU6050_Read(void);
 
 void MPU6050_Data_Prepare(float T);
 extern u8 mpu6050_ok;
+void MPU6050_Data_Offset(void);
+
 
 #endif

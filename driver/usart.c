@@ -1,6 +1,6 @@
 #include "main.h"
 #define USART_REC_LEN 200
-extern double x_pos,y_pos;
+extern unsigned int x_pos,y_pos;
 u8 USART_RX_BUF[USART_REC_LEN];
 u16 USART_RX_STA=0; 
 /*----------USART1---PA9---PA10----*/
@@ -56,25 +56,25 @@ void Usart1_Init(u32 br_num)
 	
 	DMA_DeInit(DMA2_Stream7);
 	
-	while (DMA_GetCmdStatus(DMA2_Stream7) != DISABLE){}//等待DMA可配置 
+	while (DMA_GetCmdStatus(DMA2_Stream7) != DISABLE){}//??DMA??? 
 	
-  /* 配置 DMA Stream */
-  DMA_InitStructure.DMA_Channel = DMA_Channel_4;  //通道选择
-  DMA_InitStructure.DMA_PeripheralBaseAddr = (u32)&USART1->DR;//DMA外设地址
-  DMA_InitStructure.DMA_Memory0BaseAddr = (u32)Tx1DMABuffer;//DMA 存储器0地址
-  DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;//存储器到外设模式
-  DMA_InitStructure.DMA_BufferSize = 0;//数据传输量 
-  DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;//外设非增量模式
-  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;//存储器增量模式
-  DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;//外设数据长度:8位
-  DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;//存储器数据长度:8位
-  DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;// 使用普通模式 
-  DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;//中等优先级
+  /* ?? DMA Stream */
+  DMA_InitStructure.DMA_Channel = DMA_Channel_4;  //????
+  DMA_InitStructure.DMA_PeripheralBaseAddr = (u32)&USART1->DR;//DMA????
+  DMA_InitStructure.DMA_Memory0BaseAddr = (u32)Tx1DMABuffer;//DMA ???0??
+  DMA_InitStructure.DMA_DIR = DMA_DIR_MemoryToPeripheral;//????????
+  DMA_InitStructure.DMA_BufferSize = 0;//????? 
+  DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;//???????
+  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;//???????
+  DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;//??????:8?
+  DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;//???????:8?
+  DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;// ?????? 
+  DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;//?????
   DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;         
   DMA_InitStructure.DMA_FIFOThreshold = DMA_FIFOThreshold_Full;
-  DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;//存储器突发单次传输
-  DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;//外设突发单次传输
-  DMA_Init(DMA2_Stream7, &DMA_InitStructure);//初始化DMA Stream
+  DMA_InitStructure.DMA_MemoryBurst = DMA_MemoryBurst_Single;//?????????
+  DMA_InitStructure.DMA_PeripheralBurst = DMA_PeripheralBurst_Single;//????????
+  DMA_Init(DMA2_Stream7, &DMA_InitStructure);//???DMA Stream
 
 }
 
@@ -85,30 +85,30 @@ void USART1_IRQHandler(void)
 {
 	u8 len;
 	u8 count=0;
-	int x_pos=0,y_pos=0;
+
 	u8 res;	
-	if( USART_GetITStatus(USART1,USART_IT_RXNE) )					//如果是接收中断
+	if( USART_GetITStatus(USART1,USART_IT_RXNE) )					//???????
 	{
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);
 		
 	
-	if(USART1->DR&(1<<5))//接收到数据
+	if(1)//?????
 	{	 
 		res=USART1->DR; 
-		if((USART_RX_STA&0x8000)==0)//接收未完成
+		if((USART_RX_STA&0x8000)==0)//?????
 		{
-			if(USART_RX_STA&0x4000)//接收到了0x0d
+			if(USART_RX_STA&0x4000)//????0x0d
 			{
-				if(res!=0x0a)USART_RX_STA=0;//接收错误,重新开始
-				else USART_RX_STA|=0x8000;	//接收完成了 
-			}else //还没收到0X0D
+				if(res!=0x0a)USART_RX_STA=0;//????,????
+				else USART_RX_STA|=0x8000;	//????? 
+			}else //????0X0D
 			{	
 				if(res==0x0d)USART_RX_STA|=0x4000;
 				else
 				{
 					USART_RX_BUF[USART_RX_STA&0X3FFF]=res;
 					USART_RX_STA++;
-					if(USART_RX_STA>(USART_REC_LEN-1))USART_RX_STA=0;//接收数据错误,重新开始接收	  
+					if(USART_RX_STA>(USART_REC_LEN-1))USART_RX_STA=0;//??????,??????	  
 				}		 
 			}
 		}  		 									     
@@ -116,27 +116,29 @@ void USART1_IRQHandler(void)
 		//USART1->DR='A';
 		//USART1->DR='\n';
 		//delay_ms(500);
-		if( USART_RX_STA&0x8000)              //接收完成
+		if( USART_RX_STA&0x8000)              //????
 		{
-			len=USART_RX_STA&0x3fff;          //看字节数
-			//for(count=0;count<len;count++)    //一个一个字节处理
+			len=USART_RX_STA&0x3fff;          //????
+			//for(count=0;count<len;count++)    //????????
 			//{
 				//value[count]=USART_RX_BUF[count]-48;
 				
 			//}
 			//if(USART_RX_BUF[count++]=='\n'){
+			x_pos=0;
+			y_pos=0;
 			for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
 					x_pos*=10;
 					x_pos+=USART_RX_BUF[count]-'0';
 			}	
 			count++;
-			for(;USART_RX_BUF[count]!='^'&&count<len;count++){
+			for(;USART_RX_BUF[count]!='A'&&count<len;count++){
 					y_pos*=10;
 					y_pos+=USART_RX_BUF[count]-'0';
 			}					
 			//}
 			//printf("\r\n");
-			USART_RX_STA=0;                       //此次接受的数据用完，接收标志清零
+			USART_RX_STA=0;                       //?????????,??????
 			for (count=0;count<len;count++){
 				USART_RX_BUF[count]=0;
 			}
@@ -152,7 +154,7 @@ void Usart1_Send(unsigned char *DataToSend ,u8 data_num)
 	static u8 len=0;
 	
 	DMA_Cmd(DMA2_Stream7, DISABLE);
-	DMA_ClearFlag(DMA2_Stream7,DMA_FLAG_TCIF7);//清除DMA2_Steam7传输完成标志
+	DMA_ClearFlag(DMA2_Stream7,DMA_FLAG_TCIF7);//??DMA2_Steam7??????
 	num = DMA_GetCurrDataCounter(DMA2_Stream7);
 	
 	for(i=0;i<data_num;i++)
@@ -168,8 +170,8 @@ void Usart1_Send(unsigned char *DataToSend ,u8 data_num)
 		Tx1DMABuffer[i]=*(DataToSend+i-num);
 	}
 	len=count1;
-	while (DMA_GetCmdStatus(DMA2_Stream7) != DISABLE){}	//确保DMA可以被设置  
-	DMA2_Stream7->NDTR = (uint16_t)(num+data_num);          //数据传输量  
+	while (DMA_GetCmdStatus(DMA2_Stream7) != DISABLE){}	//??DMA?????  
+	DMA2_Stream7->NDTR = (uint16_t)(num+data_num);          //?????  
 	DMA_Cmd(DMA2_Stream7, ENABLE);      
 
 }

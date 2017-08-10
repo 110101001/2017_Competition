@@ -216,7 +216,7 @@ void MPU6050_Init(u16 lpf)
 s32 sum_temp[7]= {0,0,0,0,0,0,0};
 u16 acc_sum_cnt = 0,gyro_sum_cnt = 0;
 
-void MPU6050_Data_Offset()
+void MPU6050_Data_Offset(void)
 {
 #ifdef ACC_ADJ_EN
 

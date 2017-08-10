@@ -24,7 +24,7 @@ static void Task_10ms(void)
 
 static void Task_20ms(void)
 {
-	SetPWMOut(100,200,300,400);
+	//SetPWMOut(100,200,300,400);
 }
 
 static void Task_50ms(void)

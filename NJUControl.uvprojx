@@ -489,11 +489,6 @@
               <FilePath>.\driver\sccb.c</FilePath>
             </File>
             <File>
-              <FileName>exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\driver\exti.c</FilePath>
-            </File>
-            <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\driver\key.c</FilePath>
