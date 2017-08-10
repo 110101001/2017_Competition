@@ -2,7 +2,7 @@
 .\output\bsp_flash.o: driver\bsp_flash.h
 .\output\bsp_flash.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\bsp_flash.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\bsp_flash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\bsp_flash.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\bsp_flash.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\bsp_flash.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\bsp_flash.o: .\libraries\CMSIS\Include\core_cm4_simd.h
