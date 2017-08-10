@@ -92,7 +92,7 @@ void USART1_IRQHandler(void)
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);
 		
 	
-	if(USART1->SR&(1<<5))//接收到数据
+	if(USART1->DR&(1<<5))//接收到数据
 	{	 
 		res=USART1->DR; 
 		if((USART_RX_STA&0x8000)==0)//接收未完成
@@ -130,7 +130,7 @@ void USART1_IRQHandler(void)
 					x_pos+=USART_RX_BUF[count]-'0';
 			}	
 			count++;
-			for(;USART_RX_BUF[count]!='\n'&&count<len;count++){
+			for(;USART_RX_BUF[count]!='^'&&count<len;count++){
 					y_pos*=10;
 					y_pos+=USART_RX_BUF[count]-'0';
 			}					

@@ -5,9 +5,13 @@ extern enum PendulumMode NS;
 extern u8 mode;
 char String[7][20]={{"Stop:Stay"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"}};
 int main(){
-	All_Init();
-	mode=0;
-	interface();
+	int i;
+	//All_Init();
+	//mode=0;
+	//interface();
+	GPIO_Configuration();
+  X_IN1=X_IN2=Y_IN1=Y_IN2=1;
+	while(1);
 }
 
 void interface(){

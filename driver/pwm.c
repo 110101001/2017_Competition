@@ -51,7 +51,6 @@ void PWM_Configuration(void)
   TIM_OC2Init(TIM4, &TIM_OCInitStructure);
   TIM_OC3Init(TIM4, &TIM_OCInitStructure);
   TIM_OC4Init(TIM4, &TIM_OCInitStructure);
-
 	
 	TIM_CtrlPWMOutputs(TIM4, ENABLE);
   TIM_ARRPreloadConfig(TIM4, ENABLE);
