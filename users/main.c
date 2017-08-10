@@ -3,14 +3,21 @@
 			
 extern u8 mode;
 extern int mode_change_flag;
-
-char String[9][20]={{"Calibration"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Stop"}};
+extern unsigned int x_pos,y_pos;
+extern float Roll,Pitch;
+float roll0,pitch0;
+char String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
 int main(){
-	int i;
+	//int i;
 	All_Init();
 	mode=0;
-	for(i=0;i<100;i++)
+	//for(i=0;i<100;i++)
 	 MPU6050_Data_Offset();
+	
+	//Delay_ms(200);
+	//roll0=Roll;
+	//pitch0=Pitch;
+	
 	interface();
 }
 
@@ -43,7 +50,13 @@ void interface(){
 			}
 			if(mode!=step) mode_change_flag=1;
 			mode=step;
-			LCD_Clear(BLACK);
 		}
+		if(mode!=0&&mode!=8){
+			LCD_Clear(WHITE);
+			LCD_DisplayString(40,290,24,String[mode]);
+			LCD_Draw_Circle(x_pos/2+40,y_pos/2+20,10);
+			LCD_Draw_Rectangle(40,20,200,180);
+		}
+		Delay_ms(1);
 	}
 }

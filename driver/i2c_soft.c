@@ -12,7 +12,7 @@ void I2c_Soft_delay()																//ÓÃÓÚiicµÄdelay
 	if(!I2C_FastMode)
 	{
 		u8 i = 15;
-		while(i--);
+ 		while(i--);
 	}
 }
 

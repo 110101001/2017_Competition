@@ -4,6 +4,7 @@ extern double speed_x,speed_y;
 static u32 Time_Ms=0;
 static u32 Time_Last=0;
 extern u8 mode;
+extern float roll0,pitch0;
 
 /*----TIM2---TIM6-----*/
 void TIM5_Configuration(void)//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
@@ -125,6 +126,12 @@ void TIM3_IRQHandler(void)
 	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
   	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
 						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);
+			//临时矫正
+			
+			//Pitch-=pitch0;
+			//Roll-=roll0;
+			
+			
 			Time_Last=TIM5->CNT;
 					if (Time_Ms%10==0)
 				{
