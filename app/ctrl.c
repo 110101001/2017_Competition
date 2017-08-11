@@ -33,7 +33,7 @@ void calibration(void)
 		Motor_X->ref=Motor_Y->ref=0;
 		mode_change_flag=0;
 	}
-	Motor_X->now=Roll,Motor_Y->now=Pitch;
+	Motor_X->now=Pitch,Motor_Y->now=Roll>0?180-Roll:-180-Roll;
   pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
 }

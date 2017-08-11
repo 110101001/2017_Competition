@@ -18,6 +18,7 @@ void Delay_us(uint32_t us);
 void Delay_ms(uint32_t ms);
 void TIM6_Configuration(void);
 void TIM6_Start(void);
+void TIM3_Configuration(void);//用于控制，中断1ms/次
 uint32_t GetInnerLoop(int loop);
 void InnerLoopInit(void);
 #endif

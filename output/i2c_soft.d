@@ -47,5 +47,3 @@
 .\output\i2c_soft.o: .\app\ctrl.h
 .\output\i2c_soft.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\i2c_soft.o: .\driver\key.h
-.\output\i2c_soft.o: .\app\encoder.h
-.\output\i2c_soft.o: .\users\main.h

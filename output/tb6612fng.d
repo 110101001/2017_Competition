@@ -47,5 +47,3 @@
 .\output\tb6612fng.o: .\app\ctrl.h
 .\output\tb6612fng.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\tb6612fng.o: .\driver\key.h
-.\output\tb6612fng.o: .\app\encoder.h
-.\output\tb6612fng.o: .\users\main.h

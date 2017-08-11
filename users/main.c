@@ -1,5 +1,5 @@
 #include "main.h"
-#define DISPLAY LCD_Clear(WHITE); LCD_DisplayString(40,30,24,"Mode Select");LCD_Draw_Line(39,0,39,320);for(i=0;i<9;i++){ LCD_DisplayString(40,60+24*i,24,(u8*)String[i]); }LCD_Draw_Rectangle(40,60+24*step,240,60+24*(step+1));sprintf(str,"P:%1.1f,R:%1.1f",Pitch,Roll);LCD_DisplayString(80,300,16,str);
+#define DISPLAY LCD_Clear(WHITE); LCD_DisplayString(40,30,24,"Mode Select");LCD_Draw_Line(39,0,39,320);for(i=0;i<9;i++){ LCD_DisplayString(40,60+24*i,24,(u8*)String[i]); }LCD_Draw_Rectangle(40,60+24*step,240,60+24*(step+1));sprintf(str,"P:%1.1f,R:%1.1f",Pitch,Roll>0?180-Roll:-180-Roll);LCD_DisplayString(80,300,16,str);
 			
 extern u8 mode;
 extern int mode_change_flag;
@@ -11,12 +11,10 @@ extern PID_Type* Speed_X;
 extern PID_Type* Speed_Y;
 char String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
 int main(){
-//	All_Init();
-//	mode=0;
-// 	interface();
-		PWM_Configuration();																//PWM初始化
-	GPIO_Configuration();																//GPIO初始化
-  Set_Motor(600,600);
+	All_Init();
+	mode=0;
+	MPU6050_Data_Offset();
+ 	interface();
 }
 
 /*
@@ -64,7 +62,7 @@ void interface(){
 			LCD_Draw_Rectangle(5,5,165,165);
 			sprintf(str,"P:%1.1f",Pitch);
 			LCD_DisplayString(170,10,16,str);
-			sprintf(str,"R:%1.1f",Roll);
+			sprintf(str,"R:%1.1f",Roll>0?180-Roll:-180-Roll);
 			
 			LCD_DisplayString(170,30,16,str);
 			LCD_DisplayString(0,180,16,"MOTX:");
@@ -147,7 +145,7 @@ void interface(){
 					LCD_Draw_Rectangle(5,5,165,165);
 					sprintf(str,"P:%1.1f",Pitch);
 					LCD_DisplayString(170,10,16,str);
-					sprintf(str,"R:%1.1f",Roll);
+					sprintf(str,"R:%1.1f",Roll>0?180-Roll:-180-Roll);
 					LCD_DisplayString(170,30,16,str);
 					
 					LCD_DisplayString(0,180,16,"MOTX:");

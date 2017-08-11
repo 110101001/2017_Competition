@@ -47,5 +47,3 @@
 .\output\main.o: .\app\ctrl.h
 .\output\main.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\main.o: .\driver\key.h
-.\output\main.o: .\app\encoder.h
-.\output\main.o: .\users\main.h

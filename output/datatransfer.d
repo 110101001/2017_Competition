@@ -47,5 +47,3 @@
 .\output\datatransfer.o: .\app\ctrl.h
 .\output\datatransfer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\datatransfer.o: .\driver\key.h
-.\output\datatransfer.o: .\app\encoder.h
-.\output\datatransfer.o: .\users\main.h

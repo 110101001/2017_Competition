@@ -47,5 +47,3 @@
 .\output\led.o: .\app\ctrl.h
 .\output\led.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\led.o: .\driver\key.h
-.\output\led.o: .\app\encoder.h
-.\output\led.o: .\users\main.h

@@ -47,5 +47,3 @@
 .\output\ak8975.o: .\app\ctrl.h
 .\output\ak8975.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\ak8975.o: .\driver\key.h
-.\output\ak8975.o: .\app\encoder.h
-.\output\ak8975.o: .\users\main.h

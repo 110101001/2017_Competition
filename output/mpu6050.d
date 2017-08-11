@@ -47,5 +47,3 @@
 .\output\mpu6050.o: .\app\ctrl.h
 .\output\mpu6050.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\mpu6050.o: .\driver\key.h
-.\output\mpu6050.o: .\app\encoder.h
-.\output\mpu6050.o: .\users\main.h

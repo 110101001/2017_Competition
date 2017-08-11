@@ -47,5 +47,3 @@
 .\output\timer.o: .\app\ctrl.h
 .\output\timer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\timer.o: .\driver\key.h
-.\output\timer.o: .\app\encoder.h
-.\output\timer.o: .\users\main.h
