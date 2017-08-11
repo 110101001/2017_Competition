@@ -2,7 +2,7 @@
 .\output\gpio.o: .\users\main.h
 .\output\gpio.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\gpio.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\gpio.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\gpio.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\gpio.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\gpio.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\gpio.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\gpio.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\gpio.o: .\libraries\STLibraries\misc.h
-.\output\gpio.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\gpio.o: .\app\mymath.h
 .\output\gpio.o: .\driver\led.h
 .\output\gpio.o: .\driver\timer.h
@@ -45,5 +45,7 @@
 .\output\gpio.o: .\driver\lcd.h
 .\output\gpio.o: .\app\TB6612FNG.h
 .\output\gpio.o: .\app\ctrl.h
-.\output\gpio.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\output\gpio.o: .\driver\key.h
+.\output\gpio.o: .\app\encoder.h
+.\output\gpio.o: .\users\main.h

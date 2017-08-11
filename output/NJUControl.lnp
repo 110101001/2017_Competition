@@ -15,6 +15,7 @@
 ".\output\sccb.o"
 ".\output\key.o"
 ".\output\tb6612fng.o"
+".\output\encoder.o"
 ".\output\controltask.o"
 ".\output\datatransfer.o"
 ".\output\filter.o"

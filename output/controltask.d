@@ -2,7 +2,7 @@
 .\output\controltask.o: .\users\main.h
 .\output\controltask.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\controltask.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\controltask.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\controltask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\controltask.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\controltask.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\controltask.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\controltask.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\controltask.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\controltask.o: .\libraries\STLibraries\misc.h
-.\output\controltask.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\controltask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\controltask.o: .\app\mymath.h
 .\output\controltask.o: .\driver\led.h
 .\output\controltask.o: .\driver\timer.h
@@ -45,5 +45,7 @@
 .\output\controltask.o: .\driver\lcd.h
 .\output\controltask.o: .\app\TB6612FNG.h
 .\output\controltask.o: .\app\ctrl.h
-.\output\controltask.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\controltask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\output\controltask.o: .\driver\key.h
+.\output\controltask.o: .\app\encoder.h
+.\output\controltask.o: .\users\main.h

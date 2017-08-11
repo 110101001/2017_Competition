@@ -2,7 +2,7 @@
 .\output\datatransfer.o: .\users\main.h
 .\output\datatransfer.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\datatransfer.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\datatransfer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\datatransfer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\datatransfer.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\datatransfer.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\datatransfer.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\datatransfer.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\datatransfer.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\datatransfer.o: .\libraries\STLibraries\misc.h
-.\output\datatransfer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\datatransfer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\datatransfer.o: .\app\mymath.h
 .\output\datatransfer.o: .\driver\led.h
 .\output\datatransfer.o: .\driver\timer.h
@@ -45,5 +45,7 @@
 .\output\datatransfer.o: .\driver\lcd.h
 .\output\datatransfer.o: .\app\TB6612FNG.h
 .\output\datatransfer.o: .\app\ctrl.h
-.\output\datatransfer.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\datatransfer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\output\datatransfer.o: .\driver\key.h
+.\output\datatransfer.o: .\app\encoder.h
+.\output\datatransfer.o: .\users\main.h

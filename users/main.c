@@ -13,7 +13,7 @@ char String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task
 int main(){
 	All_Init();
 	mode=0;
-	MPU6050_Data_Offset();
+	//MPU6050_Data_Offset();
  	interface();
 }
 
