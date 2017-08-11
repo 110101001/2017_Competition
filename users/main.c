@@ -1,28 +1,20 @@
 #include "main.h"
-#define DISPLAY LCD_Clear(WHITE); LCD_DisplayString(40,30,24,"Mode Select");LCD_Draw_Line(39,0,39,320);for(i=0;i<9;i++){ LCD_DisplayString(40,60+24*i,24,(u8*)String[i]); }LCD_Draw_Rectangle(40,60+24*step,240,60+24*(step+1));
+#define DISPLAY LCD_Clear(WHITE); LCD_DisplayString(40,30,24,"Mode Select");LCD_Draw_Line(39,0,39,320);for(i=0;i<9;i++){ LCD_DisplayString(40,60+24*i,24,(u8*)String[i]); }LCD_Draw_Rectangle(40,60+24*step,240,60+24*(step+1));sprintf(str,"P:%1.1f,R:%1.1f",Pitch,Roll>0?180-Roll:-180-Roll);LCD_DisplayString(80,300,16,str);
 			
 extern u8 mode;
 extern int mode_change_flag;
 extern unsigned int x_pos,y_pos;
 extern float Roll,Pitch;
-float roll0,pitch0;
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
 extern PID_Type* Speed_X;
 extern PID_Type* Speed_Y;
 char String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
 int main(){
-	//int i;
 	All_Init();
 	mode=0;
-	//for(i=0;i<10;i++)
 	MPU6050_Data_Offset();
-	
-	//Delay_ms(200);
-	//roll0=Roll;
-	//pitch0=Pitch;
-
-	interface();
+ 	interface();
 }
 
 /*
@@ -73,19 +65,19 @@ void interface(){
 			sprintf(str,"R:%1.1f",Roll>0?180-Roll:-180-Roll);
 			
 			LCD_DisplayString(170,30,16,str);
-			LCD_DisplayString(20,180,16,"MOTX:");
+			LCD_DisplayString(0,180,16,"MOTX:");
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_X->kp,Motor_X->ki,Motor_X->kd);
-			LCD_DisplayString(80,180,16,str);
-			LCD_DisplayString(20,200,16,"MOTY:");
+			LCD_DisplayString(40,180,16,str);
+			LCD_DisplayString(0,200,16,"MOTY:");
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
-			LCD_DisplayString(80,200,16,str);
-			LCD_DisplayString(20,220,16,"SPDX:");
+			LCD_DisplayString(40,200,16,str);
+			LCD_DisplayString(0,220,16,"SPDX:");
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
-			LCD_DisplayString(80,220,16,str);
-			LCD_DisplayString(20,240,16,"SPDY:");
+			LCD_DisplayString(40,220,16,str);
+			LCD_DisplayString(0,240,16,"SPDY:");
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
-			LCD_DisplayString(80,240,16,str);
-			LCD_Draw_Circle(85+col_pid*55,178+step_pid*20,2);
+			LCD_DisplayString(40,240,16,str);
+			LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 			sprintf(str,"Skip:%f",skip);
 			LCD_DisplayString(100,260,16,str);
 			if(key=='8'){
@@ -154,21 +146,21 @@ void interface(){
 					sprintf(str,"P:%1.1f",Pitch);
 					LCD_DisplayString(170,10,16,str);
 					sprintf(str,"R:%1.1f",Roll>0?180-Roll:-180-Roll);
-			
 					LCD_DisplayString(170,30,16,str);
-					LCD_DisplayString(20,180,16,"MOTX:");
+					
+					LCD_DisplayString(0,180,16,"MOTX:");
 					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_X->kp,Motor_X->ki,Motor_X->kd);
-					LCD_DisplayString(80,180,16,str);
-					LCD_DisplayString(20,200,16,"MOTY:");
+					LCD_DisplayString(40,180,16,str);
+					LCD_DisplayString(0,200,16,"MOTY:");
 					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
-					LCD_DisplayString(80,200,16,str);
-					LCD_DisplayString(20,220,16,"SPDX:");
+					LCD_DisplayString(40,200,16,str);
+					LCD_DisplayString(0,220,16,"SPDX:");
 					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
-					LCD_DisplayString(80,220,16,str);
-					LCD_DisplayString(20,240,16,"SPDY:");
+					LCD_DisplayString(40,220,16,str);
+					LCD_DisplayString(0,240,16,"SPDY:");
 					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
-					LCD_DisplayString(80,240,16,str);
-					LCD_Draw_Circle(85+col_pid*55,178+step_pid*20,2);
+					LCD_DisplayString(40,240,16,str);
+					LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 					sprintf(str,"Skip:%f",skip);
 					LCD_DisplayString(100,260,16,str);
 				}

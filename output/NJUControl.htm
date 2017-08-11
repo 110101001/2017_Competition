@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\NJUControl.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\NJUControl.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Aug 11 13:47:37 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Aug 11 15:26:34 2017
 <BR><P>
 <H3>Maximum Stack Usage =        296 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1435,11 +1435,11 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>TIM3_Configuration</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, timer.o(i.TIM3_Configuration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TIM3_Configuration &rArr; NVIC_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TimeBaseInit
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITConfig
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;All_Init
 </UL>
@@ -1477,18 +1477,18 @@ Global Symbols
 <P><STRONG><a name="[3d]"></a>TIM5_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, timer.o(i.TIM5_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM5_IRQHandler &rArr; TIM_GetITStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearFlag
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearFlag
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
 <P><STRONG><a name="[41]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, timer.o(i.TIM6_DAC_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; TIM_GetITStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearFlag
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearFlag
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
@@ -1630,7 +1630,8 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>Usart1_Init</STRONG> (Thumb, 270 bytes, Stack size 96 bytes, usart.o(i.Usart1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 164<LI>Call Chain = Usart1_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
@@ -1641,7 +1642,6 @@ Global Symbols
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetCmdStatus
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_DeInit
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;All_Init
 </UL>
@@ -1657,7 +1657,8 @@ Global Symbols
 <P><STRONG><a name="[88]"></a>Usart2_Init</STRONG> (Thumb, 332 bytes, Stack size 104 bytes, usart.o(i.Usart2_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = Usart2_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -1669,7 +1670,6 @@ Global Symbols
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetCmdStatus
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_DeInit
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;All_Init
 </UL>
@@ -1814,7 +1814,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IMUupdate
 </UL>
 
-<P><STRONG><a name="[10a]"></a>interface</STRONG> (Thumb, 2756 bytes, Stack size 96 bytes, main.o(i.interface))
+<P><STRONG><a name="[10a]"></a>interface</STRONG> (Thumb, 3054 bytes, Stack size 96 bytes, main.o(i.interface))
 <BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = interface &rArr; LCD_Draw_Rectangle &rArr; LCD_Draw_Line &rArr; LCD_DrawPoint &rArr; LCD_SetCursor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
