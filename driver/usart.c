@@ -85,7 +85,8 @@ void USART1_IRQHandler(void)
 {
 	u8 len;
 	u8 count=0;
-
+	unsigned int x_temp=0,y_temp=0;
+	static u8 fail_count=0;
 	u8 res;	
 	if( USART_GetITStatus(USART1,USART_IT_RXNE) )					//???????
 	{
@@ -127,16 +128,18 @@ void USART1_IRQHandler(void)
 			//if(USART_RX_BUF[count++]=='\n'){
 			if(USART_RX_BUF[count++]=='B'){
 				while(USART_RX_BUF[count]=='B') count++;
-				x_pos=0;
-				y_pos=0;
 				for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
-						x_pos*=10;
-						x_pos+=USART_RX_BUF[count]-'0';
+						x_temp*=10;
+						x_temp+=USART_RX_BUF[count]-'0';
 				}	
 				count++;
 				for(;USART_RX_BUF[count]!='A'&&count<len;count++){
-						y_pos*=10;
-						y_pos+=USART_RX_BUF[count]-'0';
+						y_temp*=10;
+						y_temp+=USART_RX_BUF[count]-'0';
+				}
+				if((USART_RX_BUF[++count]-'0')==(x_temp+y_temp)%10){
+					x_pos=x_temp;
+					y_pos=y_temp;
 				}
 			}
 			//}
