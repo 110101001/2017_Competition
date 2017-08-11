@@ -4,6 +4,7 @@ u8 mode;
 int mode_change_flag;
 int time;
 extern float Roll,Pitch,Yaw;
+float Roll_ref,Pitch_ref;
 uint32_t time_count_begin;
 int static_time_begin;
 
@@ -28,21 +29,15 @@ void calibration(void)
 {
 		if(mode_change_flag==1)
 	{
-		set_pid(Motor_X,100,0,0); //50 0.5 1000
-	  set_pid(Motor_Y,0,0,0);
-		Motor_X->ref=Motor_Y->ref=0;
+		//set_pid(Motor_X,-100,-0.7,-2000); Y: -600,-0.5,-400
+		set_pid(Motor_X,-2500,0,0);
+	  set_pid(Motor_Y,-2500,0,0);
+		Motor_X->ref=Pitch_ref,Motor_Y->ref=Roll_ref;
 		mode_change_flag=0;
 	}
-	if(fabs(Pitch)<=0.15 && fabs(Roll>0?180-Roll:-180-Roll)<=0.15)
-	{
-		Set_Motor(0,0);
-		mode=0;
-	}
-	else{
 	Motor_X->now=Pitch,Motor_Y->now=Roll>0?180-Roll:-180-Roll;
   pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
-	}
 }
 
 /*====================================================
@@ -172,5 +167,7 @@ void mode4(void)
 //=====================·¢»Ó²¿·Ö======================
 void mode5(void);
 void mode6(void);
-void mode7(void);
-
+void mode7(void)
+{
+	Roll_ref=Roll>0?180-Roll:-180-Roll,Pitch_ref=Pitch;
+}

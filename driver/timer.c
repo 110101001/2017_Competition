@@ -5,6 +5,7 @@ static u32 Time_Ms=0;
 static u32 Time_Last=0;
 extern u8 mode;
 extern float roll0,pitch0;
+float pitch_pre,roll_pre;
 
 /*----TIM2---TIM6-----*/
 void TIM5_Configuration(void)//TIM2作为系统时钟，CNT寄存器中的为计数开始到现在的微秒数
@@ -122,16 +123,13 @@ void TIM3_IRQHandler(void)
 	{
 		Time_Ms++;
 		if (Time_Ms%2==0){
+			pitch_pre=Pitch,roll_pre=Roll;
 		MPU6050_Read();
 	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
   	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
-						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);
-			//临时矫正
-			
-			//Pitch-=pitch0;
-			//Roll-=roll0;
-			
-			
+						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);			
+			if(fabs(Roll)>180||fabs(Pitch)>180)
+				Roll=roll_pre,Pitch=pitch_pre;
 			Time_Last=TIM5->CNT;
 					if (Time_Ms%30==0)
 				{
@@ -145,9 +143,9 @@ void TIM3_IRQHandler(void)
 							case 2: mode2(); break;
 							case 3: mode3(); break;
 							case 4: mode4(); break;
+							case 7: mode7(); break;
 							//case Task4: mode4(); break;
 							//case Task5: mode5(); break;
-							//case 6: mode6(); break;
 							default:break;
 						}	
 				}	

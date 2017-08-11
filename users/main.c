@@ -3,13 +3,14 @@
 			
 extern u8 mode;
 extern int mode_change_flag;
+
 extern unsigned int x_pos,y_pos;
 extern float Roll,Pitch;
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
 extern PID_Type* Speed_X;
 extern PID_Type* Speed_Y;
-char String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
+u8 String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
 int main(){
 	All_Init();
 	mode=0;
@@ -21,7 +22,7 @@ int main(){
 按键0为mode0（回到水平状态） 按某键为Stop
 */
 void interface(){
-	char str[20];
+	u8 str[20];
 	u8 key=0;
 	u8 step_pid=0;
 	u8 col_pid=0;
@@ -80,6 +81,12 @@ void interface(){
 			LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 			sprintf(str,"Skip:%f",skip);
 			LCD_DisplayString(100,260,16,str);
+			if(key=='A'){
+				while(key=='A') key=Get_KeyValue();
+				temp_mode=mode;
+				mode=0;
+				while(1){
+			key=Get_KeyValue();
 			if(key=='8'){
 				step_pid=(step_pid==3?3:step_pid+1);
 				while(key=='8') key=Get_KeyValue();
@@ -96,10 +103,35 @@ void interface(){
 				col_pid=(col_pid==2?2:col_pid+1);
 				while(key=='6') key=Get_KeyValue();
 			}
+			if(key=='A') break;
+			
+			LCD_Clear(WHITE);
+			LCD_DisplayString(40,290,24,String[mode]);
+			LCD_Draw_Circle(x_pos/2+5,y_pos/2+5,5);
+			LCD_Draw_Rectangle(5,5,165,165);
+			sprintf(str,"P:%1.1f",Pitch);
+			LCD_DisplayString(170,10,16,str);
+			sprintf(str,"R:%1.1f",Roll>0?180-Roll:-180-Roll);
+			
+			LCD_DisplayString(170,30,16,str);
+			LCD_DisplayString(0,180,16,"MOTX:");
+			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_X->kp,Motor_X->ki,Motor_X->kd);
+			LCD_DisplayString(40,180,16,str);
+			LCD_DisplayString(0,200,16,"MOTY:");
+			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
+			LCD_DisplayString(40,200,16,str);
+			LCD_DisplayString(0,220,16,"SPDX:");
+			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
+			LCD_DisplayString(40,220,16,str);
+			LCD_DisplayString(0,240,16,"SPDY:");
+			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
+			LCD_DisplayString(40,240,16,str);
+			LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
+			sprintf(str,"Skip:%f",skip);
+			LCD_DisplayString(100,260,16,str);
+			
 			if(key=='5'){
-				temp_mode=mode;
-				mode=0;
-				Set_Motor(0,0);
+
 				while(key=='5'){
 					key=Get_KeyValue();
 					if(key!='5'){
@@ -109,7 +141,6 @@ void interface(){
 				}
 				while(key!='5'){
 					key=Get_KeyValue();
-					
 					if(key=='8'){
 						temp-=skip;
 						while(key=='8') key=Get_KeyValue();
@@ -165,10 +196,13 @@ void interface(){
 					LCD_DisplayString(100,260,16,str);
 				}
 			while(key=='5') key=Get_KeyValue();
-			mode=temp_mode;
 			}
 			delay_ms(20);
 		}
+			while(key=='A') key=Get_KeyValue();
+			mode=temp_mode;
+	}
+	}
 		Delay_ms(10);
 	}
 }

@@ -2,7 +2,7 @@
 .\output\mpu6050.o: .\users\main.h
 .\output\mpu6050.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\mpu6050.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\mpu6050.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\mpu6050.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\mpu6050.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\mpu6050.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\mpu6050.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\mpu6050.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\mpu6050.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\mpu6050.o: .\libraries\STLibraries\misc.h
-.\output\mpu6050.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\mpu6050.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\mpu6050.o: .\app\mymath.h
 .\output\mpu6050.o: .\driver\led.h
 .\output\mpu6050.o: .\driver\timer.h
@@ -45,5 +45,5 @@
 .\output\mpu6050.o: .\driver\lcd.h
 .\output\mpu6050.o: .\app\TB6612FNG.h
 .\output\mpu6050.o: .\app\ctrl.h
-.\output\mpu6050.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
+.\output\mpu6050.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\output\mpu6050.o: .\driver\key.h
