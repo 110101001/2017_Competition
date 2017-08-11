@@ -1,9 +1,9 @@
 #include "main.h"
 #include "ov7670.h"
-PID_Type MX={0,0,0,0,0,0,0,0,0,0};
-PID_Type MY={0,0,0,0,0,0,0,0,0,0};
-PID_Type SX={0,0,0,0,0,0,0,0,0,0};
-PID_Type SY={0,0,0,0,0,0,0,0,0,0};
+PID_Type MX={0,0,0,0,0,0,0,0,1000,0};
+PID_Type MY={0,0,0,0,0,0,0,0,1000,0};
+PID_Type SX={0,0,0,0,0,0,0,0,1000,0};
+PID_Type SY={0,0,0,0,0,0,0,0,1000,0};
 
 
 extern PID_Type* Motor_X;

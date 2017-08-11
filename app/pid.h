@@ -2,7 +2,7 @@
 #define __PID_H
 #include "pwm.h"
 
-//增量式PID算法
+//位置式PID算法
 typedef struct 
 {
  float kp;     
@@ -12,9 +12,9 @@ typedef struct
  float now;
  float errNow; //当前的误差
  float errOld1;
- float errOld2;
- float doutput;//控制增量输出
- float  output;//控制输出
+ float I;
+ float limitI;
+ float output;//控制输出
 }PID_Type;
 
 void set_pid(PID_Type* PID,float kp,float ki,float kd);

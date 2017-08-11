@@ -13,21 +13,21 @@ void set_pid(PID_Type* PID,float kp,float ki,float kd)
 	PID->kp=kp;
 	PID->ki=ki;
 	PID->kd=kd;
-	PID->errNow=PID->errOld1=PID->errOld2=0;
+	PID->errNow=PID->errOld1=0;
 	PID->output=0;
 }
 
 void pid_cal(PID_Type* PID)
 {
-  float dErrP, dErrI, dErrD;
+  float dErrP, dErrD;
 	PID->errNow=PID->ref-PID->now;  
-  dErrP = (PID->errNow - PID->errOld1);
-  dErrI = PID->errNow;
-  dErrD = (PID->errNow - 2.0f * PID->errOld1 + PID->errOld2);
-  PID->doutput = (PID->kp * dErrP + PID->ki * dErrI + PID->kd * dErrD);
-  PID->output += PID->doutput;//Õ¼¿Õ±È
-	PID->errOld2 = PID->errOld1; 
+  dErrP = PID->errNow;
+  PID->I += PID->errNow;
+  dErrD = PID->errNow - PID->errOld1;
+  PID->output = (PID->kp * dErrP + PID->ki * PID->I + PID->kd * dErrD);
   PID->errOld1 = PID->errNow;  
+	if((PID->I)>PID->limitI) PID->I=PID->limitI;
+	if((PID->I)<-PID->limitI) PID->I=-PID->limitI;
 	if((PID->output)>DUTY_MAX) PID->output=DUTY_MAX;
 	if((PID->output)<-DUTY_MAX) PID->output=-DUTY_MAX;
 }
