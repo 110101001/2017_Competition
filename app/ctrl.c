@@ -28,12 +28,12 @@ void calibration(void)
 {
 		if(mode_change_flag==1)
 	{
-		set_pid(Motor_X,-1,0,0);
-	  set_pid(Motor_Y,-1,0,0);
+		set_pid(Motor_X,150,0,0);
+	  set_pid(Motor_Y,150,0,0);
 		Motor_X->ref=Motor_Y->ref=0;
 		mode_change_flag=0;
 	}
-	Motor_X->now=Roll,Motor_Y->now=Pitch;
+	Motor_X->now=Pitch,Motor_Y->now=Roll>0?180-Roll:-180-Roll;
   pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
 }

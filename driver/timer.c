@@ -133,7 +133,7 @@ void TIM3_IRQHandler(void)
 			
 			
 			Time_Last=TIM5->CNT;
-					if (Time_Ms%10==0)
+					if (Time_Ms%30==0)
 				{
 					ANO_AK8975_Read();	
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;

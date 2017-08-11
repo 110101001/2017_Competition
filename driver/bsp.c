@@ -2,6 +2,9 @@
 #include "ov7670.h"
 PID_Type MX={0,0,0,0,0,0,0,0,0,0};
 PID_Type MY={0,0,0,0,0,0,0,0,0,0};
+PID_Type SX={0,0,0,0,0,0,0,0,0,0};
+PID_Type SY={0,0,0,0,0,0,0,0,0,0};
+
 
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
@@ -15,8 +18,8 @@ extern int mode_change_flag;
 {
 	Motor_X=&MX;
 	Motor_Y=&MY;
-	Speed_X=&MX;
-	Speed_Y=&MX;	
+	Speed_X=&SX;
+	Speed_Y=&SY;	
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    
 	LED_Configuration();																//LED初始化
 	TIM5_Configuration();																//定时器初始化
