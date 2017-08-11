@@ -71,16 +71,18 @@ void TIM6_DAC_IRQHandler(void)									//TIM6的回调函数1ms调用一次，用于精确进入
 	if(TIM_GetITStatus(TIM6,TIM_IT_Update)==SET) 
 	{
 		Time_Ms++;
-		if (Time_Ms%2==0){
-		MPU6050_Read();
-	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
-  	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
-						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);			
-			Time_Last=TIM5->CNT;
+//		if (Time_Ms%2==0){
+//		MPU6050_Read();
+//	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
+//  	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
+//						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);			
+//			Time_Last=TIM5->CNT;
 					if (Time_Ms%30==0)
 				{
-					ANO_AK8975_Read();	
+					//ANO_AK8975_Read();	
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
+					Roll=TIM3->CNT-0x7FFF;
+					Pitch=TIM2->CNT-0x7FFF;
 						switch(mode)
 						{	
 							case CALIBRATION: calibration();break;
@@ -95,7 +97,7 @@ void TIM6_DAC_IRQHandler(void)									//TIM6的回调函数1ms调用一次，用于精确进入
 							default:break;
 						}	
 				}	
-		}
+		//}
 		DataTransferTask(Time_Ms);
 	TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
 }
@@ -116,64 +118,4 @@ uint32_t GetInnerLoop(int loop)								//用于获得精确的函数调用的周期
 	Time[1][loop] = Get_Time_Micros();
 	return Time[1][loop]-Time[0][loop];
 }
-
-void TIM3_Configuration(void)//1000-1,84-1,1ms进入一次中断
-{
-	  TIM_TimeBaseInitTypeDef tim;
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
-    tim.TIM_Period = 0xFFFFFFFF;
-    tim.TIM_Prescaler = 84 - 1;	 //1M 的时钟  
-    tim.TIM_ClockDivision = TIM_CKD_DIV1;	
-    tim.TIM_CounterMode = TIM_CounterMode_Up;  
-    TIM_ARRPreloadConfig(TIM3, ENABLE);	
-    TIM_TimeBaseInit(TIM3, &tim);
-
-    TIM_Cmd(TIM3,ENABLE);	
-}
-
-<<<<<<< HEAD
-//void TIM3_IRQHandler(void)
-//{
-//	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) 
-//	{
-////		Time_Ms++;
-////		if (Time_Ms%2==0){
-////		MPU6050_Read();
-////	  MPU6050_Data_Prepare((TIM5->CNT-Time_Last)/1000000.0f);
-////  	IMUupdate(0.5f *((TIM5->CNT-Time_Last)/1000000.0f),mpu6050.Gyro_deg.x, mpu6050.Gyro_deg.y, mpu6050.Gyro_deg.z, //??IMU
-////						mpu6050.Acc.x, mpu6050.Acc.y, mpu6050.Acc.z,&Roll,&Pitch,&Yaw);
-////			//临时矫正
-////			
-////			//Pitch-=pitch0;
-////			//Roll-=roll0;
-////			
-////			
-////			Time_Last=TIM5->CNT;
-////					if (Time_Ms%30==0)
-////				{
-////					ANO_AK8975_Read();	
-////				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
-////						switch(mode)
-////						{	
-////							case CALIBRATION: calibration();break;
-////							case 0: mode0(); break;
-////							case 1: mode1(); break;
-////							case 2: mode2(); break;
-////							case 3: mode3(); break;
-////							case 4: mode4(); break;
-////							//case Task4: mode4(); break;
-////							//case Task5: mode5(); break;
-////							//case 6: mode6(); break;
-////							default:break;
-////						}	
-////				}	
-////		}
-////		DataTransferTask(Time_Ms);
-//	TIM_ClearITPendingBit(TIM3,TIM_IT_Update);
-//}
-//}
-=======
-void TIM3_IRQHandler(void);
->>>>>>> 5682a0074463b4e9805458135c8d1935dbeb32dc
-
 

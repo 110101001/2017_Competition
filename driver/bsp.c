@@ -23,13 +23,11 @@ extern int mode_change_flag;
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    
 	LED_Configuration();																//LED初始化
 	TIM5_Configuration();																//定时器初始化
-	//TIM6_Configuration();																//TIM6初始化
-	//TIM3_Configuration();
+	TIM6_Configuration();																//TIM6初始化
 	Quad_Encoder_Configuration1();
 	Quad_Encoder_Configuration2();
 	Encoder_Start1();
 	Encoder_Start2();
-	//Encoder_Start();
 	Usart1_Init(38400);																//串口1初始化
 	Usart2_Init(115200);																//串口2初始化
 	PWM_Configuration();																//PWM初始化

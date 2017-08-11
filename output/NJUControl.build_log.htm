@@ -26,16 +26,93 @@ Project File Date:  08/11/2017
 
 <h2>Output:</h2>
 Build target 'NJUControl'
+compiling main.c...
+users\main.c(40): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        DISPLAY
+users\main.c(46): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        DISPLAY
+users\main.c(51): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        DISPLAY
+users\main.c(60): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(40,290,24,String[mode]);
+users\main.c(64): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(170,10,16,str);
+users\main.c(67): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(170,30,16,str);
+users\main.c(70): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(40,180,16,str);
+users\main.c(73): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(40,200,16,str);
+users\main.c(76): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(40,220,16,str);
+users\main.c(79): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(40,240,16,str);
+users\main.c(82): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                        LCD_DisplayString(100,260,16,str);
+users\main.c(143): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(40,290,24,String[mode]);
+users\main.c(147): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(170,10,16,str);
+users\main.c(149): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(170,30,16,str);
+users\main.c(153): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(40,180,16,str);
+users\main.c(156): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(40,200,16,str);
+users\main.c(159): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(40,220,16,str);
+users\main.c(162): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(40,240,16,str);
+users\main.c(165): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+                                        LCD_DisplayString(100,260,16,str);
+users\main.c: 19 warnings, 0 errors
+compiling ak8975.c...
+compiling bsp.c...
+driver\bsp.c(27): warning:  #223-D: function "Quad_Encoder_Configuration1" declared implicitly
+        Quad_Encoder_Configuration1();
+driver\bsp.c(28): warning:  #223-D: function "Quad_Encoder_Configuration2" declared implicitly
+        Quad_Encoder_Configuration2();
+driver\bsp.c(29): warning:  #223-D: function "Encoder_Start1" declared implicitly
+        Encoder_Start1();
+driver\bsp.c(30): warning:  #223-D: function "Encoder_Start2" declared implicitly
+        Encoder_Start2();
+driver\bsp.c: 4 warnings, 0 errors
 compiling gpio.c...
+compiling i2c_soft.c...
+compiling led.c...
+compiling mpu6050.c...
+compiling pwm.c...
+compiling timer.c...
+driver\timer.c(5): warning:  #177-D: variable "Time_Last" was declared but never referenced
+  static u32 Time_Last=0;
+driver\timer.c: 1 warning, 0 errors
+compiling lcd.c...
+compiling usart.c...
+compiling sccb.c...
+compiling key.c...
+compiling TB6612FNG.c...
+compiling ControlTask.c...
+compiling DataTransfer.c...
+compiling filter.c...
+compiling imu.c...
+compiling mymath.c...
+compiling pid.c...
+compiling ctrl.c...
 linking...
-Program Size: Code=31838 RO-data=6602 RW-data=1540 ZI-data=3772  
-".\output\NJUControl.axf" - 0 Error(s), 0 Warning(s).
+.\output\NJUControl.axf: Error: L6218E: Undefined symbol Encoder_Start1 (referred from bsp.o).
+.\output\NJUControl.axf: Error: L6218E: Undefined symbol Encoder_Start2 (referred from bsp.o).
+.\output\NJUControl.axf: Error: L6218E: Undefined symbol Quad_Encoder_Configuration1 (referred from bsp.o).
+.\output\NJUControl.axf: Error: L6218E: Undefined symbol Quad_Encoder_Configuration2 (referred from bsp.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 4 error messages.
+".\output\NJUControl.axf" - 4 Error(s), 24 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\Teresa\Documents\GitHub\2017_Competition\RTE
   C:\Keil_v55\ARM\PACK\Keil\STM32F4xx_DFP\2.8.0
 
 <h2>Collection of Component Files used:</h2>
+Target not created.
 </pre>
 </body>
 </html>
