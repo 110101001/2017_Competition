@@ -37,7 +37,7 @@ extern int mode_change_flag;
 	//OV7670_Configuration();
 	Key_Configuration();
 	InnerLoopInit();																		//内环周期初始化
-	TIM6_Start();					//ControlLoop开始
+	//TIM6_Start();					//ControlLoop开始
 	mode_change_flag=1;
 }
 

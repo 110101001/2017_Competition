@@ -28,8 +28,8 @@ void calibration(void)
 {
 		if(mode_change_flag==1)
 	{
-		set_pid(Motor_X,500,0,0);
-	  set_pid(Motor_Y,500,0,0);
+		set_pid(Motor_X,-1,0,0);
+	  set_pid(Motor_Y,-1,0,0);
 		Motor_X->ref=Motor_Y->ref=0;
 		mode_change_flag=0;
 	}

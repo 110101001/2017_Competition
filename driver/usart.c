@@ -125,17 +125,20 @@ void USART1_IRQHandler(void)
 				
 			//}
 			//if(USART_RX_BUF[count++]=='\n'){
-			x_pos=0;
-			y_pos=0;
-			for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
-					x_pos*=10;
-					x_pos+=USART_RX_BUF[count]-'0';
-			}	
-			count++;
-			for(;USART_RX_BUF[count]!='A'&&count<len;count++){
-					y_pos*=10;
-					y_pos+=USART_RX_BUF[count]-'0';
-			}					
+			if(USART_RX_BUF[count++]=='B'){
+				while(USART_RX_BUF[count]=='B') count++;
+				x_pos=0;
+				y_pos=0;
+				for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
+						x_pos*=10;
+						x_pos+=USART_RX_BUF[count]-'0';
+				}	
+				count++;
+				for(;USART_RX_BUF[count]!='A'&&count<len;count++){
+						y_pos*=10;
+						y_pos+=USART_RX_BUF[count]-'0';
+				}
+			}
 			//}
 			//printf("\r\n");
 			USART_RX_STA=0;                       //?????????,??????
