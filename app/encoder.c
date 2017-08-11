@@ -51,7 +51,7 @@ void Quad_Encoder_Configuration1(void)
 		GPIO_PinAFConfig(GPIOA,GPIO_PinSource1,GPIO_AF_TIM2);
 	
     tim.TIM_Period = 0xFFFF;
-    tim.TIM_Prescaler = 1;	 //1M 的时钟  
+    tim.TIM_Prescaler = 83;	 //1M 的时钟  
     tim.TIM_ClockDivision = TIM_CKD_DIV1;	
     tim.TIM_CounterMode = TIM_CounterMode_Up;  
     TIM_ARRPreloadConfig(TIM2, ENABLE);	
@@ -118,7 +118,7 @@ void Quad_Encoder_Configuration2(void)
 		GPIO_PinAFConfig(GPIOB,GPIO_PinSource5,GPIO_AF_TIM3);
 	
 		tim.TIM_Period = 0xFFFF;
-    tim.TIM_Prescaler = 1;	 //1M 的时钟  
+    tim.TIM_Prescaler = 83;	 //1M 的时钟  
     tim.TIM_ClockDivision = TIM_CKD_DIV1;	
     tim.TIM_CounterMode = TIM_CounterMode_Up;  
     TIM_ARRPreloadConfig(TIM3, ENABLE);	

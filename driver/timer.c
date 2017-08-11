@@ -68,6 +68,7 @@ void TIM6_Configuration(void)
 
 void TIM6_DAC_IRQHandler(void)									//TIM6的回调函数1ms调用一次，用于精确进入ControlLoop
 {
+	int Rl=0,Pt=0;
 	if(TIM_GetITStatus(TIM6,TIM_IT_Update)==SET) 
 	{
 		Time_Ms++;
@@ -81,8 +82,11 @@ void TIM6_DAC_IRQHandler(void)									//TIM6的回调函数1ms调用一次，用于精确进入
 				{
 					//ANO_AK8975_Read();	
 				//	Motor_X->now=Roll,Motor_Y->now=Pitch;
-					Roll=TIM3->CNT-0x7FFF;
-					Pitch=TIM2->CNT-0x7FFF;
+					//Rl=TIM3->CNT>0x7FFF?TIM3->CNT-0x7FFF:-(0x7FFF-TIM3->CNT);
+						Rl=TIM3->CNT-0x7FFF;
+						Pt=TIM2->CNT-0x7FFF;
+						Roll=Rl*1.0;
+						Pitch=Pt*1.0;
 						switch(mode)
 						{	
 							case CALIBRATION: calibration();break;
