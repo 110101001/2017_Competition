@@ -1,5 +1,5 @@
 #include "main.h"
-
+extern unsigned int area[9][2];
 u8 mode;
 int mode_change_flag;
 int time;
@@ -83,16 +83,13 @@ void mode2(void)
 		x_pre=x_pos,y_pre=y_pos;
 	}
 	//方案一：直接运动到目标位置
-  time=(TIM5->CNT - time_count_begin);
-	time_count_begin=TIM5->CNT;		
-	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
-	Speed_X->ref=C5X,Speed_X->now=x_pos,Speed_Y->ref=C5Y,Speed_Y->now=y_pos;
+	Speed_X->ref=area[4][0],Speed_X->now=x_pos,Speed_Y->ref=area[4][1],Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
-	Motor_X->now=x_speed,Motor_Y->now=y_speed;
-	pid_cal(Motor_X),pid_cal(Motor_Y);
-  Set_Motor(Motor_X->output,Motor_Y->output);	
-		x_pre=x_pos,y_pre=y_pos;
+	Motor_X->now=Pitch-Pitch_ref,Motor_Y->now=(Roll>0?180-Roll:-180-Roll)-Roll_ref;
+	pid_cal(Motor_X);
+	pid_cal(Motor_Y);
+	Set_Motor(Motor_X->output,Motor_Y->output);
 }
 
 /*====================================================
@@ -112,12 +109,9 @@ void mode3(void)
 		mode_change_flag=0;
 		x_pre=x_pos,y_pre=y_pos;
 	}
-  time=(TIM5->CNT - time_count_begin);
-	time_count_begin=TIM5->CNT;		
-	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
 	if((TIM5->CNT-static_time_begin)/1000000.0f<=9)//9秒以内完成
 	{
-	Speed_X->ref=C4X,Speed_X->now=x_pos,Speed_Y->ref=C4Y,Speed_Y->now=y_pos;
+	Speed_X->ref=area[3][0],Speed_X->now=x_pos,Speed_Y->ref=area[3][1],Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;
@@ -126,7 +120,7 @@ void mode3(void)
 	}
 	else
 	{	
-	Speed_X->ref=C5X,Speed_X->now=x_pos,Speed_Y->ref=C5Y,Speed_Y->now=y_pos;
+	Speed_X->ref=area[4][0],Speed_X->now=x_pos,Speed_Y->ref=area[4][1],Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;
@@ -156,7 +150,7 @@ void mode4(void)
 	time_count_begin=TIM5->CNT;		
 	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
 	x_pre=x_pos,y_pre=y_pos;
-	Speed_X->ref=C9X,Speed_X->now=x_pos,Speed_Y->ref=C9Y,Speed_Y->now=y_pos;
+	Speed_X->ref=area[8][0],Speed_X->now=x_pos,Speed_Y->ref=area[8][1],Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;

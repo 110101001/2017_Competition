@@ -2,7 +2,7 @@
 .\output\bsp.o: .\users\main.h
 .\output\bsp.o: .\libraries\STLibraries\stm32f4xx.h
 .\output\bsp.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\bsp.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\bsp.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\bsp.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\bsp.o: .\libraries\CMSIS\Include\core_cm4_simd.h
@@ -25,7 +25,7 @@
 .\output\bsp.o: .\libraries\STLibraries\stm32f4xx_tim.h
 .\output\bsp.o: .\libraries\STLibraries\stm32f4xx_usart.h
 .\output\bsp.o: .\libraries\STLibraries\misc.h
-.\output\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\bsp.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\bsp.o: .\app\mymath.h
 .\output\bsp.o: .\driver\led.h
 .\output\bsp.o: .\driver\timer.h
@@ -45,6 +45,6 @@
 .\output\bsp.o: .\driver\lcd.h
 .\output\bsp.o: .\app\TB6612FNG.h
 .\output\bsp.o: .\app\ctrl.h
-.\output\bsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\output\bsp.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\math.h
 .\output\bsp.o: .\driver\key.h
 .\output\bsp.o: driver\ov7670.h

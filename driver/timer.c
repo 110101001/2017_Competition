@@ -143,7 +143,7 @@ void TIM3_IRQHandler(void)
 							case 2: mode2(); break;
 							case 3: mode3(); break;
 							case 4: mode4(); break;
-							case 7: mode7(); break;
+							//case 7: mode7(); break;
 							//case Task4: mode4(); break;
 							//case Task5: mode5(); break;
 							default:break;
