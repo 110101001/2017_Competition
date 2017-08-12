@@ -49,8 +49,8 @@ void mode1(void)
 	{
 		set_pid(Speed_X,0,0,0);
 	  set_pid(Speed_Y,0,0,0);		
-		set_pid(Motor_X,0,0,0);
-	  set_pid(Motor_Y,0,0,0);
+		set_pid(Motor_X,-2000,0,0);
+	  set_pid(Motor_Y,-2000,0,0);
 		//time_count_begin=TIM5->CNT;		
 		mode_change_flag=0;
 		//x_pre=x_pos,y_pre=y_pos;
@@ -61,8 +61,9 @@ void mode1(void)
 	Speed_X->ref=160,Speed_X->now=x_pos,Speed_Y->ref=160,Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
-	Motor_X->now=x_speed,Motor_Y->now=y_speed;
-	pid_cal(Motor_X),pid_cal(Motor_Y);
+	Motor_X->now=Pitch-Pitch_ref,Motor_Y->now=(Roll>0?180-Roll:-180-Roll)-Roll_ref;
+	pid_cal(Motor_X);
+	pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
 }
 

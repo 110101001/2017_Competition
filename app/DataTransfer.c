@@ -11,6 +11,9 @@ u8 appTosave=0;
 
 extern PID_Type* Motor_X;
 extern PID_Type* Motor_Y;
+
+extern PID_Type* Speed_X;
+extern PID_Type* Speed_Y;
 extern int mode_change_flag;
 
 
@@ -118,7 +121,7 @@ void DataTransferTask(u32 sys_time)
 		ANO_DT_Send_Status(Roll>0?180-Roll:-180-Roll,Pitch,Yaw,0,0,0);
 	}
 	else if((sys_time+1)%10==0){
-	ANO_DT_Send_Senser(Motor_X->ref,Motor_Y->ref,mpu6050.Acc.z,Motor_X->output,
+	ANO_DT_Send_Senser(Speed_X->ref,Motor_Y->ref,mpu6050.Acc.z,Speed_X->output,
 												Motor_Y->output,mpu6050.Gyro.z,
 												DUTY1,DUTY2,ak8975.Mag_Val.z);//mpu6050.Acc.x,mpu6050.Acc.y,mpu6050.Acc.z,mpu6050.Gyro.x
 	

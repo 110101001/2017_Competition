@@ -74,10 +74,10 @@ void interface(){
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
 			LCD_DisplayString(40,200,16,str);
 			LCD_DisplayString(0,220,16,"SPDX:");
-			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
+			sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
 			LCD_DisplayString(40,220,16,str);
 			LCD_DisplayString(0,240,16,"SPDY:");
-			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
+			sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
 			LCD_DisplayString(40,240,16,str);
 			LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 			sprintf(str,"Skip:%f",skip);
@@ -122,10 +122,10 @@ void interface(){
 			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
 			LCD_DisplayString(40,200,16,str);
 			LCD_DisplayString(0,220,16,"SPDX:");
-			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
+			sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
 			LCD_DisplayString(40,220,16,str);
 			LCD_DisplayString(0,240,16,"SPDY:");
-			sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
+			sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
 			LCD_DisplayString(40,240,16,str);
 			LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 			sprintf(str,"Skip:%f",skip);
@@ -181,16 +181,16 @@ void interface(){
 					LCD_DisplayString(170,30,16,str);
 					
 					LCD_DisplayString(0,180,16,"MOTX:");
-					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_X->kp,Motor_X->ki,Motor_X->kd);
+					sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Motor_X->kp,Motor_X->ki,Motor_X->kd);
 					LCD_DisplayString(40,180,16,str);
 					LCD_DisplayString(0,200,16,"MOTY:");
-					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
+					sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Motor_Y->kp,Motor_Y->ki,Motor_Y->kd);
 					LCD_DisplayString(40,200,16,str);
 					LCD_DisplayString(0,220,16,"SPDX:");
-					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
+					sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_X->kp,Speed_X->ki,Speed_X->kd);
 					LCD_DisplayString(40,220,16,str);
 					LCD_DisplayString(0,240,16,"SPDY:");
-					sprintf(str,"P:%1.f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
+					sprintf(str,"P:%1.3f  I:%1.3f  D:%1.f",Speed_Y->kp,Speed_Y->ki,Speed_Y->kd);
 					LCD_DisplayString(40,240,16,str);
 					LCD_Draw_Circle(50+col_pid*55,178+step_pid*20,2);
 					sprintf(str,"Skip:%f",skip);
