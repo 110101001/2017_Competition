@@ -20,7 +20,7 @@ int x_speed,y_speed;
 
 void mode0(void)//停
 {
-	Set_Motor(0,0);
+	//Set_Motor(0,0);
 }
 /*====================================================
 calibration功能：平板调节至水平
@@ -30,13 +30,14 @@ void calibration(void)
 		if(mode_change_flag==1)
 	{
 		//set_pid(Motor_X,-100,-0.7,-2000); Y: -600,-0.5,-400
-		set_pid(Motor_X,-2500,0,0);
-	  set_pid(Motor_Y,-2500,0,0);
+		set_pid(Motor_X,-2000,0,0);
+	  set_pid(Motor_Y,-2000,0,0);
 		Motor_X->ref=Pitch_ref,Motor_Y->ref=Roll_ref;
 		mode_change_flag=0;
 	}
 	Motor_X->now=Pitch,Motor_Y->now=Roll>0?180-Roll:-180-Roll;
-  pid_cal(Motor_X),pid_cal(Motor_Y);
+  pid_cal(Motor_X);
+	pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
 }
 
@@ -49,8 +50,8 @@ void mode1(void)
 	{
 		set_pid(Speed_X,0,0,0);
 	  set_pid(Speed_Y,0,0,0);		
-		set_pid(Motor_X,-2000,0,0);
-	  set_pid(Motor_Y,-2000,0,0);
+		set_pid(Motor_X,-1800,0,0);
+	  set_pid(Motor_Y,-1800,0,0);
 		//time_count_begin=TIM5->CNT;		
 		mode_change_flag=0;
 		//x_pre=x_pos,y_pre=y_pos;
