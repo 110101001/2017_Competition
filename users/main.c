@@ -3,6 +3,7 @@
 			
 extern u8 mode;
 extern int mode_change_flag;
+u8 key=0;
 
 extern unsigned int x_pos,y_pos;
 extern float Roll,Pitch;
@@ -12,10 +13,48 @@ extern PID_Type* Speed_X;
 extern PID_Type* Speed_Y;
 u8 String[9][20]={{"Stop"},{"Task1:2"},{"Task2:1->5"},{"Task3:1->4->5"},{"Task4:1->9"},{"Task5"},{"Task6"},{"Task7"},{"Calibration"}};
 int main(){
-	All_Init();
-	mode=0;
-	MPU6050_Data_Offset();
- 	interface();
+	//All_Init();
+	//mode=0;	
+	PWM_Configuration();																//PWM初始化
+	GPIO_Configuration();																//GPIO初始化
+	Set_Motor(500,500);
+	while(1);
+ 	//interface();
+//	while(1)
+//	{
+//		key=Get_KeyValue();
+//		if(key==1)
+//		{
+//			mode=1;
+//			mode_change_flag=1;
+//		}
+//		else if(key==2)
+//		{
+//			mode=2;
+//			mode_change_flag=1;
+//		}
+//    else if(key==3)
+//		{
+//			mode=3;
+//			mode_change_flag=1;
+//		}
+//		else if(key==4)
+//		{
+//			mode=4;
+//			mode_change_flag=1;
+//		}
+//		else if(key=='D')
+//		{
+//			mode=0;
+//			mode_change_flag=1;
+//		}
+//		else if(key=='C')
+//		{
+//			mode=CALIBRATION;
+//			mode_change_flag=1;
+//		}
+
+//	}
 }
 
 /*

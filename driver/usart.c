@@ -2,7 +2,7 @@
 #define USART_REC_LEN 200
 extern unsigned int x_pos,y_pos;
 extern unsigned int x_pre,y_pre;
-
+unsigned int area[9][2];
 extern int time_count_begin;
 extern int time;
 extern int x_speed,y_speed;
@@ -159,6 +159,23 @@ void USART1_IRQHandler(void)
 					y_pre=y_pos;
 					time_count_begin=TIM5->CNT;
 				}
+				count=0;
+				if(USART_RX_BUF[count++]=='A'){
+				while(USART_RX_BUF[count]=='A') count++;
+				for(;USART_RX_BUF[count]!=' '&&count!=len;count++){
+						x_temp*=10;
+						x_temp+=USART_RX_BUF[count]-'0';
+				}	
+				count++;
+				for(;USART_RX_BUF[count]!='B'&&count<len;count++){
+						y_temp*=10;
+						y_temp+=USART_RX_BUF[count]-'0';
+				}
+				if((USART_RX_BUF[++count]-'0')==(x_temp+y_temp)%10){
+					area[(USART_RX_BUF[++count]-'0')][0]=x_temp;
+					area[(USART_RX_BUF[++count]-'0')][1]=y_temp;
+				}
+			}
 			}
 			//}
 			//printf("\r\n");
