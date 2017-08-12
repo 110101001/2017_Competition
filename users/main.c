@@ -56,6 +56,8 @@ void interface(){
 			while(key=='5') key=Get_KeyValue();
 			if(mode!=step) mode_change_flag=1;
 			mode=step;
+			DISPLAY
+			Delay_ms(20);
 		}
 		if(mode!=0){
 			LCD_Clear(WHITE);
