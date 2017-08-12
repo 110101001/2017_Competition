@@ -1,6 +1,18 @@
 #include "main.h"
 #define USART_REC_LEN 200
 extern unsigned int x_pos,y_pos;
+extern unsigned int x_pre,y_pre;
+
+extern int time_count_begin;
+extern int time;
+extern int x_speed,y_speed;
+
+extern PID_Type* Speed_X;
+extern PID_Type* Speed_Y;
+
+extern PID_Type* Motor_X;
+extern PID_Type* Motor_Y;
+
 u8 USART_RX_BUF[USART_REC_LEN];
 u16 USART_RX_STA=0; 
 /*----------USART1---PA9---PA10----*/
@@ -138,8 +150,14 @@ void USART1_IRQHandler(void)
 						y_temp+=USART_RX_BUF[count]-'0';
 				}
 				if((USART_RX_BUF[++count]-'0')==(x_temp+y_temp)%10){
+					time=(TIM5->CNT - time_count_begin);
 					x_pos=x_temp;
 					y_pos=y_temp;
+					x_speed=(x_pos-x_pre)/(float)time;
+					y_speed=(y_pos-y_pre)/(float)time;
+					x_pre=x_pos;
+					y_pre=y_pos;
+					time_count_begin=TIM5->CNT;
 				}
 			}
 			//}

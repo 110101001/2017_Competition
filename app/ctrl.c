@@ -16,7 +16,7 @@ extern PID_Type* Motor_Y;
 
 unsigned int x_pre,y_pre;
 unsigned int x_pos,y_pos;//在usart.c中进行更新
-double x_speed,y_speed;
+int x_speed,y_speed;
 
 void mode0(void)//停
 {
@@ -51,20 +51,19 @@ void mode1(void)
 	  set_pid(Speed_Y,0,0,0);		
 		set_pid(Motor_X,0,0,0);
 	  set_pid(Motor_Y,0,0,0);
-		time_count_begin=TIM5->CNT;		
+		//time_count_begin=TIM5->CNT;		
 		mode_change_flag=0;
-		x_pre=x_pos,y_pre=y_pos;
+		//x_pre=x_pos,y_pre=y_pos;
 	}
-	time=(TIM5->CNT - time_count_begin);
-	time_count_begin=TIM5->CNT;		
-	x_speed=(double)(x_pos-x_pre)/(double)time,y_speed=(double)(y_pos-y_pre)/(double)time;
+	//time=(TIM5->CNT - time_count_begin);
+	//time_count_begin=TIM5->CNT;		
+	//x_speed=(x_pos-x_pre)/(float)time,y_speed=(y_pos-y_pre)/(float)time;
 	Speed_X->ref=160,Speed_X->now=x_pos,Speed_Y->ref=160,Speed_Y->now=y_pos;
   pid_cal(Speed_X),pid_cal(Speed_Y);
 	Motor_X->ref=Speed_X->output,Motor_Y->ref=Speed_Y->output;
 	Motor_X->now=x_speed,Motor_Y->now=y_speed;
 	pid_cal(Motor_X),pid_cal(Motor_Y);
 	Set_Motor(Motor_X->output,Motor_Y->output);
-	x_pre=x_pos,y_pre=y_pos;
 }
 
 /*====================================================

@@ -36,6 +36,7 @@ void interface(){
 		key=Get_KeyValue();
 		if(key=='D'){
 			mode=0;
+			mode_change_flag=1;
 		}
 		if(mode==0){
 			DISPLAY

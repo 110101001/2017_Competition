@@ -2,7 +2,7 @@
 .\output\stm32f4xx_can.o: libraries\STLibraries\stm32f4xx_can.h
 .\output\stm32f4xx_can.o: libraries\STLibraries\stm32f4xx.h
 .\output\stm32f4xx_can.o: .\libraries\CMSIS\Include\core_cm4.h
-.\output\stm32f4xx_can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\stm32f4xx_can.o: C:\Keil_v55\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\stm32f4xx_can.o: .\libraries\CMSIS\Include\core_cmInstr.h
 .\output\stm32f4xx_can.o: .\libraries\CMSIS\Include\core_cmFunc.h
 .\output\stm32f4xx_can.o: .\libraries\CMSIS\Include\core_cm4_simd.h
